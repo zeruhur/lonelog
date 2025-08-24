@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Solo RPG Notation SRD — A Standard for Recording Solo Play</title>
+  <meta name="description" content="A modern, single-page rendering of the Solo RPG Notation SRD without losing any word or section." />
+  <style>
+    :root{
+      --bg: #0b0c10;
+      --panel: #111217;
+      --text: #e8e8ea;
+      --muted: #b9bcc5;
+      --accent: #8ea8ff;
+      --code-bg: #0f1117;
+      --border: #1d2130;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 14px;
+      --maxw: 920px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg: #fafafc;
+        --panel: #ffffff;
+        --text: #111218;
+        --muted: #4b4f5c;
+        --accent: #3b5bdb;
+        --code-bg: #f5f7ff;
+        --border: #e6e8f0;
+        --shadow: 0 8px 24px rgba(12, 21, 44, .08);
+      }
+    }
+    *{ box-sizing: border-box }
+    html,body{ margin:0; padding:0; background:var(--bg); color:var(--text); font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji"; }
+    a{ color: var(--accent); text-underline-offset: 3px; }
+    header{
+      position: sticky; top: 0; z-index: 10;
+      backdrop-filter: saturate(180%) blur(8px);
+      background: color-mix(in oklab, var(--bg) 82%, transparent);
+      border-bottom: 1px solid var(--border);
+    }
+    .wrap{ max-width: var(--maxw); margin: 0 auto; padding: 20px; }
+    .hero{
+      padding: 28px 0 8px;
+      display: grid; gap: 8px;
+    }
+    h1{ font-size: clamp(28px, 3.4vw, 42px); line-height:1.15; margin:0; letter-spacing:-0.02em; }
+    .subtitle{ color: var(--muted); font-style: italic; font-size: 1.05rem; }
+    main{
+      margin: 26px auto 80px;
+    }
+    article{
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: clamp(18px, 3vw, 32px);
+    }
+    hr{
+      border: none; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 26px 0;
+    }
+    h2{ font-size: clamp(22px, 2.3vw, 28px); margin: 26px 0 10px; letter-spacing: -0.01em; }
+    h3{ font-size: clamp(18px, 1.8vw, 22px); margin: 18px 0 8px; }
+    p{ margin: 10px 0; }
+    ul{ margin: 10px 0 10px 1.2em; padding:0; }
+    li{ margin: 6px 0; }
+    code, pre, kbd{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      font-size: 0.95rem;
+    }
+    pre{
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      overflow: auto;
+      margin: 12px 0;
+      white-space: pre;
+      -webkit-overflow-scrolling: touch;
+    }
+    code{
+      background: color-mix(in oklab, var(--code-bg) 88%, transparent);
+      border: 1px solid var(--border);
+      padding: .1em .35em;
+      border-radius: .4em;
+    }
+    blockquote{
+      border-left: 4px solid var(--border);
+      margin: 14px 0;
+      padding: 6px 14px;
+      color: var(--muted);
+      background: color-mix(in oklab, var(--panel) 96%, transparent);
+      border-radius: 8px;
+    }
+    footer{
+      color: var(--muted);
+      font-size: .95rem;
+      padding: 22px 0 40px;
+      text-align: center;
+    }
+    /* Section anchors */
+    h2, h3{ position: relative; scroll-margin-top: 84px; }
+    h2[id]::after, h3[id]::after{
+      content: "§";
+      position: absolute; left: -1.1em; top: 50%; translate: 0 -50%;
+      opacity: 0; transition: .2s ease; color: var(--muted);
+      font-weight: 600;
+    }
+    h2:hover::after, h3:hover::after{ opacity: .7; }
+    @media (max-width: 860px){
+      .wrap{ padding: 16px; }
+      article{ padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap hero">
+      <h1>Solo RPG Notation SRD</h1>
+      <div class="subtitle">A Standard for Recording Solo Play</div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <article aria-label="Solo RPG Notation SRD content">
+      <h1 id="srd-top">Solo RPG Notation SRD<br /><em style="font-style:italic;">A Standard for Recording Solo Play</em></h1>
+
+      <hr />
+
+      <h2 id="introduction">Introduction</h2>
+      <p>Solo RPG play often produces rich stories, but recording them can be messy.<br />
+      This standard notation system provides a <strong>shorthand method</strong> to capture the essentials of play while leaving space for optional narrative, dialogue, and campaign tracking.</p>
+
+      <p>The notation is designed to be:</p>
+      <ul>
+        <li><strong>Flexible</strong> — usable across different systems.</li>
+        <li><strong>Layered</strong> — works as both quick shorthand or expanded narrative.</li>
+        <li><strong>Searchable</strong> — tags and codes make it easy to track NPCs, events, and locations.</li>
+      </ul>
+
+      <hr />
+
+      <h2 id="1-scenes">1. Scenes</h2>
+      <p>Scenes are the basic unit of play.</p>
+
+      <pre><code>[S#] *Context / Frame*</code></pre>
+
+      <ul>
+        <li><code>S#</code> = numbered scene (<code>[S1]</code>, <code>[S2]</code>, …).</li>
+        <li>Context = short description (<em>abandoned lighthouse, midnight</em>).</li>
+        <li>Use letters for flashbacks or branches: <code>[S3a]</code>.</li>
+        <li>Use thread IDs for parallel storylines: <code>[T2-S5]</code>.</li>
+        <li>Optional time markers: <code>⏳ Day 3</code>, <code>⏰ Midnight</code>.</li>
+      </ul>
+
+      <hr />
+
+      <h2 id="2-actions">2. Actions</h2>
+      <p>Two types of uncertainty drive play:</p>
+
+      <ul>
+        <li><strong>Player-facing actions (mechanics)</strong>
+          <pre><code>▶ Pick the lock</code></pre>
+        </li>
+        <li><strong>World / GM questions (oracle)</strong>
+          <pre><code>? Is anyone inside?</code></pre>
+        </li>
+      </ul>
+
+      <hr />
+
+      <h2 id="3-resolutions">3. Resolutions</h2>
+
+      <h3 id="mechanics">Mechanics</h3>
+      <pre><code>🎲 [roll or rule] → outcome</code></pre>
+      <p>Example:<br />
+      <code>🎲 d20+Lockpicking=17 vs DC 15 → Success</code></p>
+
+      <h3 id="oracle">Oracle</h3>
+      <pre><code>⤷ [answer] (roll if relevant)</code></pre>
+      <p>Example:<br />
+      <code>⤷ Yes, but… (d6=4)</code></p>
+
+      <hr />
+
+      <h2 id="4-consequences">4. Consequences</h2>
+      <p>Record the narrative result after rolls:</p>
+      <pre><code>⇒ The door creaks open, but the noise echoes through the hall.</code></pre>
+
+      <hr />
+
+      <h2 id="5-persistent-elements">5. Persistent Elements</h2>
+      <p>Track ongoing elements with tags.</p>
+      <ul>
+        <li><strong>NPCs</strong>: <code>[N:Jonah|friendly|injured]</code> → later <code>[N:Jonah|captured]</code></li>
+        <li><strong>Locations</strong>: <code>[L:Lighthouse|ruined|stormy]</code></li>
+        <li><strong>Events &amp; Clocks</strong>: <code>[E:CultistPlot 2/6]</code></li>
+        <li><strong>Threads</strong>: <code>[Thread: Find Jonah’s Sister | Open]</code> → <code>[Thread:…|Closed]</code></li>
+        <li><strong>Player Character</strong>: <code>[PC:Name|HP 6|Stress 2|Gear:Dagger]</code> → <code>[PC:HP-1]</code></li>
+      </ul>
+      <p>Re-use IDs in later scenes to connect the log:<br />
+        <code>[#N:Jonah]</code>, <code>[#L:Lighthouse]</code>, <code>[#E:CultistPlot]</code>.
+      </p>
+
+      <hr />
+
+      <h2 id="6-progress-tracking">6. Progress Tracking</h2>
+      <p>Different forms of progress can be tracked consistently:</p>
+      <ul>
+        <li><strong>Clocks</strong> (fill up): <code>[Clock:Ritual 5/12]</code></li>
+        <li><strong>Tracks</strong> (progress bars): <code>[Track:Escape 3/8]</code></li>
+        <li><strong>Timers</strong> (count down): <code>[Timer:Dawn 2]</code></li>
+      </ul>
+
+      <hr />
+
+      <h2 id="7-random-tables">7. Random Tables</h2>
+      <p>When inspiration tables or generators are used, note the roll:</p>
+      <ul>
+        <li><strong>Simple table</strong>:<br />
+          <code>📖 d100=42 → "A broken sword"</code>
+        </li>
+        <li><strong>Complex generator</strong>:<br />
+          <code>📚 Mythic Event: d100=78 + 11 → NPC Action / Betray</code>
+        </li>
+      </ul>
+
+      <hr />
+
+      <h2 id="8-narrative-excerpts-optional">8. Narrative Excerpts (Optional)</h2>
+      <p>You may add narrative or dialogue where it helps.</p>
+      <ul>
+        <li><strong>Inline prose</strong>:<br />
+          <code>⇒ The room reeks of mildew.</code>
+        </li>
+        <li><strong>Dialogue</strong>:
+          <pre><code>N (Guard): "Who’s there?"
+PC (whisper): "Stay calm… just stay calm."</code></pre>
+        </li>
+        <li><strong>Long block</strong>:
+          <pre><code>---
+The diary reads:  
+"The tides no longer obey the moon."  
+---</code></pre>
+        </li>
+      </ul>
+      <p>This is optional — shorthand alone is enough.</p>
+
+      <hr />
+
+      <h2 id="9-boundaries">9. Boundaries</h2>
+      <ul>
+        <li><strong>Session end:</strong><br />
+          <code>=== Session 1 End ===</code>
+        </li>
+        <li><strong>Campaign label:</strong><br />
+          <code>=== Campaign Log: Clearview Mystery ===</code>
+        </li>
+      </ul>
+
+      <hr />
+
+      <h2 id="10-meta-notes">10. Meta Notes</h2>
+      <p>Use parentheses for reminders, reflections, or house rules.</p>
+      <pre><code>(note: testing alternate stealth rule)</code></pre>
+
+      <hr />
+
+      <h2 id="11-examples">11. Examples</h2>
+
+      <h3 id="example-1-hybrid-log">Example 1 — Hybrid Log</h3>
+      <pre><code>[S7] *Dark alley behind tavern ⏰ Midnight*
+▶ Sneak past the guards
+🎲 Stealth d6=2 vs TN 4 → Fail
+⇒ My foot kicks a barrel. [E:AlertClock 2/6]
+
+? Do they see me?
+⤷ No, but… (d6=3)
+⇒ Distracted, but one guard lingers. [N:Guard|watchful]
+
+N (Guard): "Who's there?"
+PC (whisper): "Stay calm… just stay calm."</code></pre>
+
+      <h3 id="example-2-pure-shorthand">Example 2 — Pure Shorthand</h3>
+      <pre><code>S7 ▶Sneak 🎲2&lt;4 F → noise [E:Alert 2/6] ?Seen? ⤷Nb3 → distracted, 1 stays</code></pre>
+
+      <h3 id="example-3-tracking-threads">Example 3 — Tracking Threads</h3>
+      <pre><code>[S12] *Inside the lighthouse*
+▶ Search the chamber
+🎲 Investigation d6=5 vs TN 4 → Success
+⇒ I find a hidden diary. [E:CultistPlot 3/6] [Thread: Find Jonah’s Sister|Open]
+
+📖 Random clue: d100=42 → "A broken sword"</code></pre>
+
+      <hr />
+
+      <h2 id="12-micro-reference-appendix">12. Micro-Reference Appendix</h2>
+      <p>A quick at-a-glance summary of common shorthand:</p>
+      <pre><code>S1 ▶Pick lock 🎲d20=17&gt;15 → Success ⇒ creak noise
+S2 ?Is anyone inside? ⤷Yes, but… ⇒ distracted guard
+S3 ▶Fight guard 🎲d6=1&lt;4 → Fail ⇒ HP-2 [PC:HP 8]
+S4 ?Does ally arrive? ⤷No, and… ⇒ Thread "Rescue" Open
+S5 ▶Search room 🎲d6=6&gt;4 → Success ⇒ find clue [#clue]
+S6 📖 d100=42 → "A broken sword" [E:CultPlot 3/6]
+S7 ▶Convince Jonah 🎲d20=12 vs DC 14 → Fail ⇒ Jonah angry [N:Jonah|hostile]
+S8 ?Does time run out? ⤷Yes ⇒ [Timer:Dawn 0]
+S9 ▶Escape tunnels 🎲d6=5&gt;3 → Success ⇒ [Track:Escape 6/8]
+S10 === Session 1 End ===</code></pre>
+
+      <hr />
+
+      <h2 id="conclusion">Conclusion</h2>
+      <p>This notation balances <strong>clarity</strong>, <strong>brevity</strong>, and <strong>expandability</strong>.</p>
+      <ul>
+        <li>Use the shorthand alone for speed.</li>
+        <li>Add narrative and tags for depth.</li>
+        <li>Reuse IDs and codes to track story arcs over time.</li>
+      </ul>
+      <p>The result is a consistent, portable log format — a <strong>play language</strong> for solo RPGs.</p>
+    </article>
+
+    <footer aria-label="footer">
+      <div class="wrap" style="padding:0;">
+        <small>Single-page static HTML. Typography, dark/light adaptive, and accessible code blocks. No words or sections removed.</small>
+      </div>
+    </footer>
+  </main>
+</body>
+              </html>
