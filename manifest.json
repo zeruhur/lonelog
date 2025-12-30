@@ -1,0 +1,10 @@
+{
+  "id": "solo-rpg-notation",
+  "name": "Solo RPG Notation",
+  "version": "1.0.0",
+  "minAppVersion": "1.4.0",
+  "description": "Implement Solo TTRPG Notation with templates, indexing, and visualization for solo role-playing games",
+  "author": "Roberto Bisceglie",
+  "authorUrl": "https://github.com/roberto-b/solorpgnotation",
+  "isDesktopOnly": false
+}

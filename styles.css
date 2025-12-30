@@ -1,0 +1,479 @@
+/* Solo RPG Notation Plugin Styles */
+
+/* ========== General ========== */
+.solo-rpg-container {
+  padding: 16px;
+}
+
+.solo-rpg-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.solo-rpg-title {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.solo-rpg-button {
+  cursor: pointer;
+  padding: 4px 12px;
+  border-radius: 4px;
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border: none;
+  font-size: 0.9em;
+}
+
+.solo-rpg-button:hover {
+  background: var(--interactive-accent-hover);
+}
+
+/* ========== Campaign Dashboard ========== */
+.solo-rpg-campaign-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.solo-rpg-campaign-card {
+  padding: 12px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.solo-rpg-campaign-card:hover {
+  background: var(--background-modifier-hover);
+}
+
+.solo-rpg-campaign-title {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.solo-rpg-campaign-stats {
+  display: flex;
+  gap: 16px;
+  font-size: 0.9em;
+  color: var(--text-muted);
+}
+
+.solo-rpg-campaign-stat {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ========== Tag Browser ========== */
+.solo-rpg-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.solo-rpg-tab {
+  padding: 8px 16px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.solo-rpg-tab:hover {
+  background: var(--background-modifier-hover);
+}
+
+.solo-rpg-tab.active {
+  border-bottom-color: var(--interactive-accent);
+  color: var(--interactive-accent);
+}
+
+.solo-rpg-search {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  background: var(--background-primary);
+  color: var(--text-normal);
+}
+
+.solo-rpg-element-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.solo-rpg-element-card {
+  padding: 10px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.solo-rpg-element-card:hover {
+  background: var(--background-modifier-hover);
+}
+
+.solo-rpg-element-name {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.solo-rpg-element-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+
+.solo-rpg-tag {
+  padding: 2px 8px;
+  background: var(--background-secondary);
+  border-radius: 3px;
+  font-size: 0.85em;
+  color: var(--text-muted);
+}
+
+.solo-rpg-element-meta {
+  font-size: 0.85em;
+  color: var(--text-muted);
+}
+
+/* ========== Progress Tracker ========== */
+.solo-rpg-progress-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.solo-rpg-progress-item {
+  padding: 12px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+}
+
+.solo-rpg-progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.solo-rpg-progress-name {
+  font-weight: 600;
+}
+
+.solo-rpg-progress-value {
+  font-size: 0.9em;
+  color: var(--text-muted);
+}
+
+/* Progress Bar */
+.solo-rpg-progress-bar-container {
+  width: 100%;
+  height: 8px;
+  background: var(--background-secondary);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.solo-rpg-progress-bar-fill {
+  height: 100%;
+  background: var(--interactive-accent);
+  transition: width 0.3s;
+  border-radius: 4px;
+}
+
+/* Circle Progress */
+.solo-rpg-progress-circle {
+  width: 60px;
+  height: 60px;
+}
+
+.solo-rpg-progress-circle-bg {
+  fill: none;
+  stroke: var(--background-secondary);
+  stroke-width: 4;
+}
+
+.solo-rpg-progress-circle-fill {
+  fill: none;
+  stroke: var(--interactive-accent);
+  stroke-width: 4;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.3s;
+}
+
+/* Timer */
+.solo-rpg-timer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.solo-rpg-timer-value {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.solo-rpg-timer-value.urgent {
+  color: var(--text-error);
+}
+
+/* ========== Empty States ========== */
+.solo-rpg-empty {
+  text-align: center;
+  padding: 32px;
+  color: var(--text-muted);
+}
+
+.solo-rpg-empty-icon {
+  font-size: 3em;
+  margin-bottom: 16px;
+  opacity: 0.3;
+}
+
+.solo-rpg-empty-text {
+  font-size: 1.1em;
+}
+
+.solo-rpg-empty-hint {
+  font-size: 0.9em;
+  margin-top: 8px;
+  padding: 8px 16px;
+  background: var(--background-secondary);
+  border-radius: 4px;
+  font-family: var(--font-monospace);
+  color: var(--text-accent);
+  display: inline-block;
+}
+
+/* ========== Dashboard Specific ========== */
+.solo-rpg-campaign-meta {
+  font-size: 0.85em;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+.solo-rpg-summary {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--background-modifier-border);
+}
+
+.solo-rpg-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.solo-rpg-stat-box {
+  padding: 12px;
+  text-align: center;
+  background: var(--background-secondary);
+  border-radius: 6px;
+}
+
+.solo-rpg-stat-icon {
+  font-size: 1.5em;
+  margin-bottom: 4px;
+}
+
+.solo-rpg-stat-value {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.solo-rpg-stat-label {
+  font-size: 0.85em;
+  color: var(--text-muted);
+}
+
+/* ========== Tag Browser Specific ========== */
+.solo-rpg-tab-content {
+  margin-top: 16px;
+}
+
+/* ========== Progress Tracker Specific ========== */
+.solo-rpg-progress-status {
+  margin-top: 8px;
+  font-size: 0.9em;
+}
+
+.solo-rpg-progress-status .complete {
+  color: var(--text-success);
+}
+
+.solo-rpg-progress-status .warning {
+  color: var(--text-warning);
+}
+
+.solo-rpg-progress-status .near-complete {
+  color: var(--text-success);
+}
+
+.solo-rpg-progress-status .urgent {
+  color: var(--text-error);
+}
+
+.solo-rpg-progress-status .expired {
+  color: var(--text-error);
+  font-weight: bold;
+}
+
+/* Progress Segments */
+.solo-rpg-progress-segments {
+  display: flex;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+.solo-rpg-progress-segment {
+  flex: 1;
+  height: 20px;
+  background: var(--background-secondary);
+  border-radius: 2px;
+}
+
+.solo-rpg-progress-segment.filled {
+  background: var(--interactive-accent);
+}
+
+/* ========== All Elements View ========== */
+
+/* Filter panel */
+.solo-rpg-filter-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding: 12px;
+  background: var(--background-secondary);
+  border-radius: 4px;
+}
+
+.solo-rpg-search-container {
+  width: 100%;
+}
+
+.solo-rpg-search-container input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 4px;
+  background: var(--background-primary);
+  color: var(--text-normal);
+  font-size: 14px;
+}
+
+.solo-rpg-type-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.solo-rpg-type-chip {
+  padding: 4px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  border: 1px solid var(--background-modifier-border);
+  background: var(--background-primary);
+  color: var(--text-muted);
+  font-size: 12px;
+  transition: all 0.2s;
+  user-select: none;
+}
+
+.solo-rpg-type-chip:hover {
+  background: var(--background-modifier-hover);
+}
+
+.solo-rpg-type-chip.active {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  border-color: var(--interactive-accent);
+  font-weight: 500;
+}
+
+/* Table */
+.solo-rpg-table-container {
+  overflow-x: auto;
+}
+
+.solo-rpg-elements-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.solo-rpg-elements-table thead {
+  background: var(--background-secondary);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.solo-rpg-elements-table th {
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 2px solid var(--background-modifier-border);
+  font-weight: 600;
+  color: var(--text-normal);
+  white-space: nowrap;
+}
+
+.solo-rpg-elements-table th[style*="cursor: pointer"] {
+  user-select: none;
+}
+
+.solo-rpg-elements-table th[style*="cursor: pointer"]:hover {
+  background: var(--background-modifier-hover);
+}
+
+.solo-rpg-elements-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--background-modifier-border);
+  color: var(--text-normal);
+}
+
+.solo-rpg-elements-row {
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.solo-rpg-elements-row:hover {
+  background: var(--background-modifier-hover);
+}
+
+.solo-rpg-sort-indicator {
+  margin-left: 4px;
+  font-size: 0.8em;
+  color: var(--interactive-accent);
+}
+
+.solo-rpg-tag-more {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Footer */
+.solo-rpg-elements-footer {
+  margin-top: 16px;
+  padding-top: 8px;
+  border-top: 1px solid var(--background-modifier-border);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 12px;
+}
