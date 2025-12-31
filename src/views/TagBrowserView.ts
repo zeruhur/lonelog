@@ -1,10 +1,10 @@
 import { ItemView, WorkspaceLeaf, TFile, Notice } from 'obsidian';
 import { NotationIndexer } from '../indexer/NotationIndexer';
-import { NPC, LocationTag, Thread } from '../types/notation';
+import { NPC, LocationTag, Thread, Reference } from '../types/notation';
 
 export const VIEW_TYPE_TAG_BROWSER = 'solo-rpg-tag-browser';
 
-type TabType = 'npcs' | 'locations' | 'threads';
+type TabType = 'npcs' | 'locations' | 'threads' | 'references';
 
 /**
  * Tag browser view for NPCs, Locations, and Threads
@@ -93,6 +93,15 @@ export class TagBrowserView extends ItemView {
 			this.currentTab = 'threads';
 			this.render();
 		});
+
+		const referencesTab = tabs.createDiv({
+			cls: `solo-rpg-tab ${this.currentTab === 'references' ? 'active' : ''}`,
+			text: 'References',
+		});
+		referencesTab.addEventListener('click', () => {
+			this.currentTab = 'references';
+			this.render();
+		});
 	}
 
 	/**
@@ -127,6 +136,9 @@ export class TagBrowserView extends ItemView {
 				break;
 			case 'threads':
 				this.renderThreads(content);
+				break;
+			case 'references':
+				this.renderReferences(content);
 				break;
 		}
 	}
@@ -346,6 +358,89 @@ export class TagBrowserView extends ItemView {
 			this.navigateToLocation(
 				thread.firstMention.file,
 				thread.firstMention.lineNumber
+			);
+		});
+	}
+
+	/**
+	 * Render references tab
+	 */
+	private renderReferences(container: HTMLElement) {
+		let references = this.getAllReferences();
+
+		// Apply search filter
+		if (this.searchQuery) {
+			const query = this.searchQuery.toLowerCase();
+			references = references.filter(
+				(ref) =>
+					ref.name.toLowerCase().includes(query) ||
+					ref.type.toLowerCase().includes(query)
+			);
+		}
+
+		// Empty state
+		if (references.length === 0) {
+			this.renderEmptyState(
+				container,
+				'No references found',
+				'Reference existing elements with: [#N:Name] or [#L:Name]'
+			);
+			return;
+		}
+
+		// Render list
+		const list = container.createDiv({ cls: 'solo-rpg-element-list' });
+		for (const ref of references) {
+			this.renderReferenceCard(list, ref);
+		}
+	}
+
+	/**
+	 * Get all references from all campaigns
+	 */
+	private getAllReferences(): Reference[] {
+		const references: Reference[] = [];
+		for (const campaign of this.indexer.getAllCampaigns()) {
+			references.push(...Array.from(campaign.references.values()));
+		}
+		return references;
+	}
+
+	/**
+	 * Render individual reference card
+	 */
+	private renderReferenceCard(container: HTMLElement, reference: Reference) {
+		const card = container.createDiv({ cls: 'solo-rpg-element-card' });
+
+		// Reference name with type badge
+		const nameContainer = card.createDiv({ cls: 'solo-rpg-element-name' });
+		nameContainer.createSpan({ text: reference.name });
+
+		// Type badge
+		const typeBadge = nameContainer.createSpan({
+			text: ` (${reference.type})`,
+			cls: 'solo-rpg-tag'
+		});
+
+		// Metadata
+		const meta = card.createDiv({ cls: 'solo-rpg-element-meta' });
+		meta.createSpan({ text: `Mentions: ${reference.mentions.length}` });
+
+		// Last seen location
+		if (reference.mentions.length > 0) {
+			const lastMention = reference.mentions[reference.mentions.length - 1];
+			if (lastMention.session && lastMention.scene) {
+				meta.createSpan({
+					text: ` | Last seen: ${lastMention.session}, ${lastMention.scene}`,
+				});
+			}
+		}
+
+		// Navigation on click
+		card.addEventListener('click', () => {
+			this.navigateToLocation(
+				reference.firstMention.file,
+				reference.firstMention.lineNumber
 			);
 		});
 	}

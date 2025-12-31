@@ -16,8 +16,9 @@ import {
  */
 const TAG_PATTERNS = {
 	npc: /\[N:([^|\]]+)(?:\|([^\]]+))?\]/g,
-	npcRef: /\[#N:([^\]]+)\]/g,
+	npcRef: /\[#N:([^|\]]+)(?:\|([^\]]+))?\]/g,
 	location: /\[L:([^|\]]+)(?:\|([^\]]+))?\]/g,
+	locationRef: /\[#L:([^|\]]+)(?:\|([^\]]+))?\]/g,
 	thread: /\[Thread:([^|\]]+)\|([^\]]+)\]/g,
 	clock: /\[Clock:([^\]]+)\s+(\d+)\/(\d+)\]/g,
 	track: /\[Track:([^\]]+)\s+(\d+)\/(\d+)\]/g,
@@ -266,15 +267,18 @@ export class TagExtractor {
 	extractReferences(content: string): { type: 'npc' | 'location', name: string }[] {
 		const refs: { type: 'npc' | 'location', name: string }[] = [];
 
-		// NPC references
+		// NPC references (e.g., [#N:Name] or [#N:Name|tag])
 		const npcRefPattern = new RegExp(TAG_PATTERNS.npcRef);
 		let match;
 		while ((match = npcRefPattern.exec(content)) !== null) {
 			refs.push({ type: 'npc', name: match[1].trim() });
 		}
 
-		// Could add location references if spec supports them
-		// [#L:Name] - not in current spec but could be added
+		// Location references (e.g., [#L:Name] or [#L:Name|tag])
+		const locationRefPattern = new RegExp(TAG_PATTERNS.locationRef);
+		while ((match = locationRefPattern.exec(content)) !== null) {
+			refs.push({ type: 'location', name: match[1].trim() });
+		}
 
 		return refs;
 	}

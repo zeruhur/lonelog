@@ -7,6 +7,8 @@ import { DashboardView, VIEW_TYPE_DASHBOARD } from './views/DashboardView';
 import { TagBrowserView, VIEW_TYPE_TAG_BROWSER } from './views/TagBrowserView';
 import { ProgressTrackerView, VIEW_TYPE_PROGRESS_TRACKER } from './views/ProgressTrackerView';
 import { AllElementsView, VIEW_TYPE_ALL_ELEMENTS } from './views/AllElementsView';
+import { RandomEventsView, VIEW_TYPE_RANDOM_EVENTS } from './views/RandomEventsView';
+import { MetaNotesView, VIEW_TYPE_META_NOTES } from './views/MetaNotesView';
 
 export default class SoloRPGNotationPlugin extends Plugin {
 	settings: SoloRPGSettings;
@@ -46,9 +48,29 @@ export default class SoloRPGNotationPlugin extends Plugin {
 		// Add settings tab
 		this.addSettingTab(new SoloRPGSettingTab(this.app, this));
 
-		// Add ribbon icon
+		// Add ribbon icons
 		this.addRibbonIcon('dice', 'Solo RPG Notation', () => {
 			this.activateView(VIEW_TYPE_DASHBOARD);
+		});
+
+		this.addRibbonIcon('tags', 'Tag Browser', () => {
+			this.activateView(VIEW_TYPE_TAG_BROWSER);
+		});
+
+		this.addRibbonIcon('clock', 'Progress Tracker', () => {
+			this.activateView(VIEW_TYPE_PROGRESS_TRACKER);
+		});
+
+		this.addRibbonIcon('database', 'All Elements Reference', () => {
+			this.activateView(VIEW_TYPE_ALL_ELEMENTS);
+		});
+
+		this.addRibbonIcon('dices', 'Random Events', () => {
+			this.activateView(VIEW_TYPE_RANDOM_EVENTS);
+		});
+
+		this.addRibbonIcon('sticky-note', 'Meta Notes', () => {
+			this.activateView(VIEW_TYPE_META_NOTES);
 		});
 
 		console.log('Solo RPG Notation plugin loaded successfully');
@@ -67,6 +89,8 @@ export default class SoloRPGNotationPlugin extends Plugin {
 		this.app.workspace.detachLeavesOfType(VIEW_TYPE_TAG_BROWSER);
 		this.app.workspace.detachLeavesOfType(VIEW_TYPE_PROGRESS_TRACKER);
 		this.app.workspace.detachLeavesOfType(VIEW_TYPE_ALL_ELEMENTS);
+		this.app.workspace.detachLeavesOfType(VIEW_TYPE_RANDOM_EVENTS);
+		this.app.workspace.detachLeavesOfType(VIEW_TYPE_META_NOTES);
 	}
 
 	async loadSettings() {
@@ -99,6 +123,16 @@ export default class SoloRPGNotationPlugin extends Plugin {
 		this.registerView(
 			VIEW_TYPE_ALL_ELEMENTS,
 			(leaf) => new AllElementsView(leaf, this.indexer)
+		);
+
+		this.registerView(
+			VIEW_TYPE_RANDOM_EVENTS,
+			(leaf) => new RandomEventsView(leaf, this.indexer)
+		);
+
+		this.registerView(
+			VIEW_TYPE_META_NOTES,
+			(leaf) => new MetaNotesView(leaf, this.indexer)
 		);
 	}
 

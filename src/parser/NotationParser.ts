@@ -336,6 +336,25 @@ export class NotationParser {
 								firstMention: location,
 								mentions: [location],
 							});
+
+							// Also add references as mentions to NPCs/Locations
+							if (ref.type === 'npc') {
+								allNPCs.push({
+									id: `npc:${ref.name.toLowerCase()}`,
+									name: ref.name,
+									tags: [],
+									firstMention: location,
+									mentions: [location],
+								});
+							} else if (ref.type === 'location') {
+								allLocations.push({
+									id: `location:${ref.name.toLowerCase()}`,
+									name: ref.name,
+									tags: [],
+									firstMention: location,
+									mentions: [location],
+								});
+							}
 						}
 					}
 				}
