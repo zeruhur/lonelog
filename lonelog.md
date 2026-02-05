@@ -222,7 +222,7 @@ The `@` symbol represents you, the player, acting in the game world. Think of it
 
 ### 3.2 Resolutions
 
-Once you've declared an action (`>`) or asked a question (`?`), you need to resolve the uncertainty. This is where the game system or oracle gives you an answer.
+Once you've declared an action (`@`) or asked a question (`?`), you need to resolve the uncertainty. This is where the game system or oracle gives you an answer.
 
 There are two types of resolutions: **mechanics** (when you roll dice or apply rules) and **oracle answers** (when you ask the game world a question).
 
@@ -231,7 +231,7 @@ There are two types of resolutions: **mechanics** (when you roll dice or apply r
 Format:
 
 ```
-d: [roll or rule] => outcome
+d: [roll or rule] -> outcome
 ```
 
 The `d:` prefix indicates a mechanics roll or rule resolution. Always include the outcome (Success/Fail or narrative result).
@@ -239,10 +239,10 @@ The `d:` prefix indicates a mechanics roll or rule resolution. Always include th
 #### Examples
 
 ```
-d: d20+Lockpicking=17 vs DC 15 => Success
-d: 2d6=8 vs TN 7 => Success
-d: d100=42 => Partial success (using result table)
-d: Hack the terminal (spend 1 Gear) => Success
+d: d20+Lockpicking=17 vs DC 15 -> Success
+d: 2d6=8 vs TN 7 -> Success
+d: d100=42 -> Partial success (using result table)
+d: Hack the terminal (spend 1 Gear) -> Success
 ```
 
 #### Comparison shorthand
@@ -250,9 +250,9 @@ d: Hack the terminal (spend 1 Gear) => Success
 When comparing rolls to target numbers, you can use comparison operators:
 
 ```
-d: 5 vs TN 4 => Success    (standard format)
-d: 5≥4 => S                (shorthand: ≥ means meets/exceeds TN)
-d: 2≤4 => F                (shorthand: ≤ means fails to meet TN)
+d: 5 vs TN 4 -> Success    (standard format)
+d: 5≥4 -> S                (shorthand: ≥ means meets/exceeds TN)
+d: 2≤4 -> F                (shorthand: ≤ means fails to meet TN)
 ```
 
 **Note:** Comparison operators `≥` and `≤` work seamlessly with lonelog notation, with no symbol conflicts. You can also use `>=` and `<=`.
@@ -1418,7 +1418,7 @@ These are common pitfalls that make logs harder to read or parse. If you catch y
 ```
 ❌ ? Sneak past guards    (This is an action, not a question)
 
-✔️ @ Sneak past guards    (Actions use >)
+✔️ @ Sneak past guards    (Actions use @)
   ? Do they notice?      (Questions use ?)
 ```
 
@@ -1736,7 +1736,7 @@ Bookmark this section. You'll come back to it often in your first few sessions, 
 |--------|---------|---------|
 | `@` | Player action (mechanics) | `@ Pick the lock` |
 | `?` | Oracle question (world/uncertainty) | `? Is anyone inside?` |
-| `d:` | Mechanics roll/result | `d: 2d6=8 vs TN 7 => Success` |
+| `d:` | Mechanics roll/result | `d: 2d6=8 vs TN 7 -> Success` |
 | `->` | Oracle/dice result | `-> Yes, but...` |
 | `=>` | Consequence/outcome | `=> The door opens quietly` |
 
@@ -1765,8 +1765,8 @@ Bookmark this section. You'll come back to it often in your first few sessions, 
 
 #### A.5 Random Generation
 
-- `tbl: roll => result` — Simple table lookup
-- `gen: system => result` — Complex generator
+- `tbl: roll -> result` — Simple table lookup
+- `gen: system -> result` — Complex generator
 
 #### A.6 Structure
 
