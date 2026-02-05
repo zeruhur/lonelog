@@ -12,6 +12,22 @@ If you've ever played a solo RPG, you know the challenge: you're deep in an exci
 
 Maybe you've tried free-form journaling (gets messy), pure prose (loses the mechanics), or bullet points (hard to parse later). This notation system offers a different approach: a **lightweight shorthand** that captures the essential game elements while leaving room for as much (or as little) narrative as you want.
 
+### 1.1 Why "Lonelog"?
+
+This system started life as **Solo TTRPG Notation**, a name that was descriptive but unwieldy. Nearly 5,000 downloads later, it was clear the concept resonated with the community. But real-world use brought valuable lessons about what worked, what caused friction, and where the notation could evolve.
+
+The rename to **Lonelog** reflects three insights:
+
+- **A name that sticks.** "Solo TTRPG Notation" got abbreviated a dozen different ways. *Lonelog* is compact and evocative: *Lone* (solo play) + *log* (session record). It works.
+
+- **A name you can find.** Search "solo ttrpg notation" and you'll drown in generic results. Search "lonelog" and you get *this system*. Think of how **Markdown** succeeded as both a format and a brand, it's not called "Text Formatting Notation." Lonelog gives this notation a distinct, findable identity.
+
+- **A name built to last.** As the system matures, having a clear identity makes it easier for the community to share resources, tools, and session logs under one banner.
+
+The core philosophy hasn't changed: separate mechanics from fiction, stay compact at the table, scale from one-shots to long campaigns, and work in both markdown and paper notebooks.
+
+### 1.2 What Lonelog Does
+
 Think of it as a shared language for solo play. Whether you're playing *Ironsworn*, *Thousand Year Old Vampire*, a non-solo RPG using Mythic GME, or your own homebrew system, this notation helps you:
 
 - **Record what happened** without slowing down play
@@ -34,7 +50,7 @@ The notation's goals:
 - **Make it useful for both digital and analog notes**
 - **Compliance and extension of markdown for digital use**
 
-### 1.1 How to Use This Notation
+### 1.3 How to Use This Notation
 
 Think of this as a **toolbox, not a rulebook**. The system is fully modular: grab what works for you and leave the rest behind.
 
@@ -58,7 +74,7 @@ Think of it as concentric circles:
 
 **Start small.** Try the core notation for one scene. If it clicks, great—keep going. If you need more, layer in what helps. Your notes should serve your play, not the other way around.
 
-### 1.2 Quick Start: Your First Session
+### 1.4 Quick Start: Your First Session
 
 Never used notation before? Here's everything you need:
 
@@ -88,7 +104,7 @@ d: Stealth 4 vs TN 5 -> Fail
 => He's suspicious, starts walking toward the noise
 ```
 
-### 1.3 Migrating from Solo TTRPG Notation v2.0
+### 1.5 Migrating from Solo TTRPG Notation v2.0
 
 If you're already using Solo TTRPG Notation v2.0, welcome! Lonelog is an evolution of that system with clarified symbols for better consistency.
 
