@@ -1,5 +1,5 @@
 ---
-title: lonelog
+title: Lonelog
 subtitle: "A Standard Notation for Solo RPG Session Logging"
 author: Roberto Bisceglie
 version: 1.0.0
@@ -1840,7 +1840,7 @@ Lonelog's symbols were chosen for specific reasons:
 
 ## Credits & License
 
-© 2025 Roberto Bisceglie
+© 2025-2026 Roberto Bisceglie
 
 This notation is inspired by the [Valley Standard](https://alfredvalley.itch.io/the-valley-standard).
 
@@ -1856,9 +1856,6 @@ This notation is inspired by the [Valley Standard](https://alfredvalley.itch.io/
 - v 1.0.0: Evolved from Solo TTRPG Notation v2.0 by Roberto Bisceglie
 
 This work is licensed under the **Creative Commons Attribution-ShareAlike 4.0 International License**.
-
-To view a copy of this license, visit: <http://creativecommons.org/licenses/by-sa/4.0/>  
-Or write to: Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
 **You are free to:**
 

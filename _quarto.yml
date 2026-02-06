@@ -1,0 +1,27 @@
+filters:
+  - _extensions/pagebreak.lua  # Converts --- to pagebreaks in Typst
+
+# Cover page images
+logo-image: logo.png
+license-image: by-sa.png
+
+format:
+  typst:
+    toc: true
+    toc-depth: 2
+    number-sections: false
+    fontsize: 11pt
+    tbl-colwidths: auto
+    keep-typ: true  # Preserves generated .typ file for debugging
+
+    # Custom template
+    template-partials:
+      - _extensions/typst-show.typ
+    include-in-header:
+      - _extensions/typst-template.typ
+
+  html:
+    toc: true
+
+  epub:
+    toc: true
