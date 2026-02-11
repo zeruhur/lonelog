@@ -14,6 +14,21 @@
 #let font-body = "Lora"
 #let font-code = "Consolas"
 
+// Multilingual TOC titles
+#let toc-titles = (
+  "en": "Contents",
+  "fr": "Table des matières",
+  "de": "Inhaltsverzeichnis",
+  "es": "Índice",
+  "it": "Sommario",
+  "pt": "Sumário",
+  "nl": "Inhoud",
+  "pl": "Spis treści",
+  "ru": "Содержание",
+  "ja": "目次",
+  "zh": "目录",
+)
+
 // Custom callout box function
 #let callout(title: none, body) = {
   v(0.8em)
@@ -316,7 +331,7 @@
         size: 16pt,
         weight: "bold",
         fill: color-black
-      )[#if toc_title != none { toc_title } else { "Contents" }]
+      )[#if toc_title != none { toc_title } else { toc-titles.at(safe-lang, default: "Contents") }]
       v(1.5em)
       it
     }

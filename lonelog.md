@@ -4,6 +4,7 @@ subtitle: "A Standard Notation for Solo RPG Session Logging"
 author: Roberto Bisceglie
 version: 1.0.0
 license: CC BY-SA 4.0
+lang: en
 ---
 
 ## 1. Introduction
