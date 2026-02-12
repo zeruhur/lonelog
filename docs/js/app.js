@@ -6,7 +6,7 @@
 const BASE = (() => {
   const path = window.location.pathname;
   // If served from /site/ or /site/index.html, assets are one level up
-  if (/\/site(\/|\/index\.html)?$/i.test(path)) return '../';
+  if (/\/docs(\/|\/index\.html)?$/i.test(path)) return '../';
   return '';
 })();
 
