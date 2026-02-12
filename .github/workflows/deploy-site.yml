@@ -1,0 +1,41 @@
+name: Deploy Site to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+
+      - name: Assemble site
+        run: |
+          mkdir _site
+
+          # Copy site shell (HTML, CSS, JS)
+          cp -r site/* _site/
+
+          # Copy images
+          cp logo.png by-sa.png _site/
+
+          # Copy all lonelog markdown source files
+          cp lonelog*.md _site/
+
+          # Copy built output files (PDF, EPUB, ODT) if they exist
+          cp lonelog*.pdf _site/ 2>/dev/null || true
+          cp lonelog*.epub _site/ 2>/dev/null || true
+          cp lonelog*.odt _site/ 2>/dev/null || true
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          publish_branch: gh-pages

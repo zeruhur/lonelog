@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lonelog - A Standard Notation for Solo RPG Session Logging</title>
+  <meta name="description" content="Lonelog is a standard notation system for solo RPG session logging. Download the reference in PDF, EPUB, ODT, or read it online.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;900&family=Lora:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- marked.js -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <button class="sidebar-toggle" aria-label="Toggle sidebar">&#9776;</button>
+    <img data-asset="logo.png" alt="Lonelog" class="header-logo">
+    <span class="header-title">Lonelog</span>
+
+    <div class="header-controls">
+      <select id="doc-select" aria-label="Select document"></select>
+
+      <div class="lang-buttons">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="it">IT</button>
+        <button class="lang-btn" data-lang="fr">FR</button>
+      </div>
+
+      <button class="theme-toggle" aria-label="Toggle theme">&#127769;</button>
+    </div>
+  </header>
+
+  <!-- Sidebar Overlay (mobile) -->
+  <div class="sidebar-overlay"></div>
+
+  <!-- Layout -->
+  <div class="layout">
+
+    <!-- Sidebar / TOC -->
+    <aside class="sidebar">
+      <div class="sidebar-label">Contents</div>
+      <ul class="toc-list" id="toc-list"></ul>
+    </aside>
+
+    <!-- Main -->
+    <main class="main-content">
+
+      <!-- Hero -->
+      <section class="hero">
+        <h1 class="hero-title" id="hero-title">Lonelog</h1>
+        <p class="hero-subtitle" id="hero-subtitle">A Standard Notation for Solo RPG Session Logging</p>
+        <div class="hero-meta" id="hero-meta"></div>
+        <div class="downloads" id="downloads"></div>
+      </section>
+
+      <!-- Article -->
+      <article class="article">
+        <div class="loading">Loading...</div>
+      </article>
+
+      <!-- Footer -->
+      <footer class="site-footer">
+        <div class="footer-license">
+          <img data-asset="by-sa.png" alt="CC BY-SA 4.0">
+          <span>Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a></span>
+        </div>
+        <div>
+          <a href="https://github.com/zeruhur/lonelog" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <!-- App -->
+  <script src="js/app.js"></script>
+</body>
+</html>
