@@ -166,11 +166,11 @@ Nei taccuini cartacei:
 
 ### S1 *Biblioteca scolastica dopo l'orario di chiusura*
 
-```
-@ Intrufolarsi per controllare gli archivi
-d: Furtività d6=5 vs CD 4 -> Successo
-=> Entro inosservato. [L:Biblioteca|buia|silenziosa]
-```
+    ```
+    @ Intrufolarsi per controllare gli archivi
+    d: Furtività d6=5 vs CD 4 -> Successo
+    => Entro inosservato. [L:Biblioteca|buia|silenziosa]
+    ```
 
 ```
 
