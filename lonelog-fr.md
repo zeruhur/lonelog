@@ -1,12 +1,18 @@
 ---
-title: Lonelog
-subtitle: "Une notation standardisée pour la prise de note de session JDR solo"
-author: Roberto Bisceglie
-version: 1.0.0
-license: CC BY-SA 4.0
+obsidianUIMode: preview
+Création: 2026-02-08 12:00
+Modification: 2026-03-01 15:00
+tags: [Méthodologie, Système]
+Type:
+  - Méthodologie
+Source: Lonelog
+Titre: Lonelog
+version: 1.1.0
 lang: fr
-translator: Eilir
+aliases: []
 ---
+
+# Lonelog
 
 ## 1. Introduction
 
@@ -21,14 +27,12 @@ Ce système a commencé sous le nom de **Solo TTRPG Notation**, un nom descripti
 Le changement de nom pour **Lonelog** reflète trois idées :
 
 - **Un nom qui reste.** "Solo TTRPG Notation" a été abrégé d'une douzaine de manières différentes. *Lonelog* est compact et évocateur : *Lone* (jeu en solo) + *log* (journal de session). Ça fonctionne.
-
 - **Un nom que vous pouvez trouver.** Cherchez "solo ttrpg notation" et vous vous noierez dans des résultats génériques. Cherchez "lonelog" et vous obtenez *ce système*. Pensez à la façon dont **Markdown** a réussi à la fois comme format et comme marque, il ne s'appelle pas "Notation de Formatage de Texte". Lonelog donne à cette notation une identité distincte et trouvable.
-
 - **Un nom conçu pour durer.** À mesure que le système mûrit, avoir une identité claire facilite le partage de ressources, d'outils et de journaux de session par la communauté sous une seule bannière.
 
 La philosophie de base n'a pas changé : séparer la mécanique de la fiction, rester compact à la table de jeu, s'adapter des one-shots aux longues campagnes, et fonctionner aussi bien en markdown que sur des carnets papier.
 
-### 1.2 Ce que fait Lonelog
+### 1.2 Ce que Fait Lonelog
 
 Pensez-y comme un langage commun pour le jeu en solo. Que vous jouiez à *Ironsworn*, *Thousand Year Old Vampire*, à un JDR non solo avec le Mythic GME, ou à votre propre système maison, cette notation vous aide à :
 
@@ -52,7 +56,7 @@ Les objectifs de la notation :
 - **Le rendre utile pour les notes numériques et analogiques**
 - **Conformité et extension de markdown pour un usage numérique**
 
-### 1.3 Comment utiliser cette notation
+### 1.3 Comment Utiliser Cette Notation
 
 Considérez ceci comme une **boîte à outils, pas un livre de règles**. Le système est entièrement modulaire : prenez ce qui fonctionne pour vous et laissez le reste.
 
@@ -76,7 +80,9 @@ Pensez-y comme des cercles concentriques :
 
 **Commencez petit.** Essayez la notation de base pour une scène. Si ça vous plaît, super — continuez. Si vous avez besoin de plus, ajoutez ce qui vous aide. Vos notes doivent servir votre jeu, pas l'inverse.
 
-### 1.4 Démarrage rapide : Votre première session
+**Une note sur la licence :** Ce travail est publié sous licence CC BY-SA 4.0, qui couvre la spécification Lonelog elle-même — ce document. Les journaux de session, les actual plays et tout autre contenu que vous créez à l'aide de la notation Lonelog sont votre propre travail et ne sont pas soumis à cette licence. Écrivez, publiez et licenciez vos sessions comme bon vous semble.
+
+### 1.4 Démarrage Rapide : Votre Première Session
 
 Jamais utilisé de notation auparavant ? Voici tout ce dont vous avez besoin :
 
@@ -93,7 +99,7 @@ d: votre résultat de jet -> Succès ou Échec
 
 **C'est tout !** Tout le reste est optionnel. Essayez ceci pour une scène et voyez ce que vous en pensez.
 
-#### Exemple de démarrage rapide
+#### Exemple de Démarrage Rapide
 
 ```
 S1 *Ruelle sombre, minuit*
@@ -102,11 +108,11 @@ d: Discrétion 4 vs ND 5 -> Échec
 => Je donne un coup de pied dans une bouteille. Le garde se retourne !
 
 ? Me voit-il clairement ?
--> Non, mais...
+-> Non, but...
 => Il est méfiant, commence à marcher vers le bruit
 ```
 
-### 1.5 Migration depuis Solo TTRPG Notation v2.0
+### 1.5 Migration depuis Solo TTRPG Notation V2.0
 
 Si vous utilisez déjà Solo TTRPG Notation v2.0, bienvenue ! Lonelog est une évolution de ce système avec des symboles clarifiés pour une meilleure cohérence.
 
@@ -120,7 +126,7 @@ Si vous utilisez déjà Solo TTRPG Notation v2.0, bienvenue ! Lonelog est une é
 
 **Clarification clé :** Dans la v2.0, `=>` était utilisé de manière confuse pour les résultats des dés et les conséquences. Lonelog clarifie cela en utilisant `->` pour TOUTES les résolutions (dés et oracle), réservant `=>` exclusivement aux conséquences.
 
-#### Vos anciens journaux sont toujours valides
+#### Vos Anciens Journaux Sont Toujours Valides
 
 La structure et la philosophie restent identiques. Vos journaux existants sont parfaitement lisibles — vous n'avez pas besoin de les convertir à moins de vouloir une cohérence dans toute votre campagne.
 
@@ -131,11 +137,11 @@ Si vous préférez une conversion manuelle, utilisez rechercher & remplacer dans
 1. Trouver : `>` (en début de ligne) → Remplacer : `@`
 2. Les symboles `->` et `=>` sont conservés mais avec une utilisation clarifiée.
 
-## 2. Formats numérique vs analogique
+## 2. Formats Numérique Vs Analogique
 
 Cette notation fonctionne à la fois dans des **fichiers markdown numériques et des carnets analogiques**. Choisissez le format qui convient à votre style de jeu.
 
-### 2.1 Format numérique (Markdown)
+### 2.1 Format Numérique (Markdown)
 
 Dans les fichiers markdown numériques :
 
@@ -146,9 +152,10 @@ Dans les fichiers markdown numériques :
 - **Notation de base et suivi** → Blocs de code pour faciliter la copie/l'analyse
 - **Narration** → Prose normale entre les blocs de code
 
-> **Note :** Enveloppez toujours la notation dans des blocs de code (`` ``` ``) lorsque vous utilisez le markdown numérique. Cela évite les conflits avec la syntaxe Markdown et garantit que les symboles comme `=>` s'affichent correctement. Certaines extensions Markdown (Mermaid, plugins Obsidian) peuvent interpréter `=>` en dehors des blocs de code.
+>[!note]+ Note:
+>Enveloppez toujours la notation dans des blocs de code (`` ``` ``) lorsque vous utilisez le markdown numérique. Cela évite les conflits avec la syntaxe Markdown et garantit que les symboles comme `=>` s'affichent correctement. Certaines extensions Markdown (Mermaid, plugins Obsidian) peuvent interpréter `=>` en dehors des blocs de code.
 
-### 2.2 Format analogique (Carnet)
+### 2.2 Format Analogique (Carnet)
 
 Dans les carnets papier :
 
@@ -157,9 +164,9 @@ Dans les carnets papier :
 - Utilisez les mêmes symboles et la même structure
 - Les crochets et les balises aident à parcourir les pages papier
 
-### 2.3 Exemples de format
+### 2.3 Exemples de Format
 
-#### Markdown numérique
+#### Markdown Numérique
 
 ````markdown
 ## Session 1
@@ -174,7 +181,7 @@ d: Discrétion d6=5 vs ND 4 -> Succès
 ```
 ````
 
-#### Carnet analogique
+#### Carnet Analogique
 
 ```
 === Session 1 ===
@@ -191,7 +198,7 @@ d: Discrétion d6=5 vs ND 4 -> Succès
 
 Les deux formats utilisent une notation identique — seul l'emballage diffère.
 
-## 3. Notation de base
+## 3. Notation de Base
 
 C'est le cœur du système — les symboles que vous utiliserez dans presque chaque scène. Tout le reste dans ce document est optionnel, mais ces éléments de base sont ce qui fait fonctionner la notation.
 
@@ -207,7 +214,7 @@ Cette distinction est fondamentale. Lorsque vous balancez une épée, vous utili
 
 La notation reflète cela avec deux symboles différents — un pour chaque type d'action.
 
-Le symbole `@` vous représente, le joueur, agissant dans le monde du jeu. Pensez-y comme "à ce moment, je...". Il est visuellement distinct des opérateurs de comparaison, rendant vos journaux plus clairs et évitant la confusion lors de l'enregistrement des jets de dés.
+Le symbole `@` vous représente, le joueur, agissant dans le monde du jeu. Pensez-y comme "à ce moment, je…". Il est visuellement distinct des opérateurs de comparaison, rendant vos journaux plus clairs et évitant la confusion lors de l'enregistrement des jets de dés.
 
 **Actions orientées joueur (mécanique) :**
 
@@ -231,7 +238,7 @@ Une fois que vous avez déclaré une action (`@`) ou posé une question (`?`), v
 
 Il existe deux types de résolutions : la **mécanique** (lorsque vous lancez des dés ou appliquez des règles) et les **réponses de l'oracle** (lorsque vous posez une question au monde du jeu).
 
-#### 3.2.1 Jets de mécanique
+#### 3.2.1 Jets de Mécanique
 
 Format :
 
@@ -241,7 +248,7 @@ d: [jet ou règle] -> résultat
 
 Le préfixe `d:` indique une résolution par jet de mécanique ou par règle. Incluez toujours le résultat (Succès/Échec ou résultat narratif).
 
-#### Exemples
+##### Exemples
 
 ```
 d: d20+Crochetage=17 vs DC 15 -> Succès
@@ -249,7 +256,7 @@ d: 2d6=8 vs ND 7 -> Succès
 d: Pirater le terminal (dépenser 1 Équipement) -> Succès
 ```
 
-#### Raccourci de comparaison
+##### Raccourci de Comparaison
 
 Lors de la comparaison des jets à des nombres cibles, vous pouvez utiliser des opérateurs de comparaison :
 
@@ -268,7 +275,7 @@ d: 2≤4 F
 d: 5≥4 S
 ```
 
-#### 3.2.2 Résultats de l'oracle et des dés
+#### 3.2.2 Résultats de L'oracle et des Dés
 
 Le symbole `->` représente une résolution définitive — une déclaration de résultat. La flèche montre visuellement "ceci mène au résultat", qu'il soit déterminé par la mécanique des dés ou la réponse de l'oracle.
 
@@ -280,7 +287,7 @@ Le symbole `->` représente une résolution définitive — une déclaration de 
 
 Le préfixe `->` indique tout résultat de résolution — mécanique ou oracle.
 
-#### Résultats de la mécanique des dés
+##### Résultats de la Mécanique des Dés
 
 Pour les jets de mécanique, `->` déclare le Succès ou l'Échec :
 
@@ -291,25 +298,25 @@ d: Attaque 2d6=7 vs ND 7 -> Succès
 d: Piratage d10=3 -> Succès Partiel
 ```
 
-#### Réponses de l'oracle
+##### Réponses de L'oracle
 
 Pour les questions à l'oracle, `->` déclare ce que le monde révèle :
 
 ```
 -> Oui (d6=6)
--> Non, mais... (d6=3)
--> Oui, et... (d6=5)
--> Non, et... (d6=1)
+-> Non, but... (d6=3)
+-> Oui, and... (d6=5)
+-> Non, and... (d6=1)
 ```
 
-#### Formats d'oracle courants
+##### Formats D'oracle Courants
 
 - **Oracles Oui/Non :** `-> Oui`, `-> Non`
-- **Oui/Non avec modificateurs :** `-> Oui, mais...`, `-> Non, et...`
+- **Oui/Non avec modificateurs :** `-> Oui, mais…`, `-> Non, et…`
 - **Résultats gradués :** `-> Oui franc`, `-> Non faible`
 - **Résultats personnalisés :** `-> Partiellement`, `-> Avec un coût`
 
-#### Pourquoi une syntaxe unifiée ?
+##### Pourquoi une Syntaxe Unifiée ?
 
 La mécanique et les oracles résolvent tous deux l'incertitude. Utiliser `->` pour les deux crée de la cohérence — chaque résolution reçoit la même déclaration, ce qui rend votre journal plus facile à parcourir et à analyser. Que vous ayez lancé des dés ou demandé à l'oracle, `->` marque le moment où l'incertitude devient certitude.
 
@@ -323,7 +330,7 @@ Enregistrez le résultat narratif après les jets en utilisant `=>`. Le symbole 
 => Je trouve un journal intime caché avec un indice crucial.
 ```
 
-#### Conséquences multiples
+#### Conséquences Multiples
 
 Vous pouvez enchaîner plusieurs lignes de conséquences pour des effets en cascade :
 
@@ -334,11 +341,11 @@ d: Crochetage 5≥4 -> Succès
 => [E:HorlogeAlerte 1/6]
 ```
 
-### 3.4 Séquences d'action complètes
+### 3.4 Séquences D'action Complètes
 
 Voici comment les éléments de base se combinent :
 
-#### Séquence axée sur la mécanique
+#### Séquence Axée sur la Mécanique
 
 ```
 @ Crocheter la serrure
@@ -346,7 +353,7 @@ d: d20+Crochetage=17 vs DC 15 -> Succès
 => La porte grince en s'ouvrant, mais le bruit résonne dans le couloir.
 ```
 
-#### Séquence axée sur l'oracle
+#### Séquence Axée sur L'oracle
 
 ```
 ? Y a-t-il quelqu'un à l'intérieur ?
@@ -354,7 +361,7 @@ d: d20+Crochetage=17 vs DC 15 -> Succès
 => Quelqu'un est là, mais il est distrait.
 ```
 
-#### Séquence combinée
+#### Séquence Combinée
 
 ```
 @ Se faufiler devant les gardes
@@ -366,7 +373,7 @@ d: Discrétion 2≤4 -> Échec
 => Distraits, mais un garde s'attarde. [N:Garde|vigilant]
 ```
 
-## 4. Couches optionnelles
+## 4. Couches Optionnelles
 
 Vous avez les bases — actions, jets et conséquences. C'est suffisant pour un jeu simple. Mais les campagnes plus longues nécessitent souvent plus : des PNJ qui réapparaissent, des fils d'intrigue qui se tissent à travers les sessions, une progression qui s'accumule avec le temps.
 
@@ -374,7 +381,7 @@ Cette section couvre les **éléments de suivi** qui vous aident à gérer la co
 
 Choisissez ce dont votre campagne a besoin.
 
-### 4.1 Éléments persistants
+### 4.1 Éléments Persistants
 
 Au fur et à mesure que votre campagne se développe, certaines choses restent : les PNJ qui réapparaissent, les lieux où vous retournez, les menaces en cours, les questions de l'histoire qui s'étendent sur plusieurs sessions. Ce sont vos **éléments persistants**.
 
@@ -428,7 +435,7 @@ Choisissez le style qui rend votre journal le plus clair.
 
 Les événements suivent les éléments importants de l'intrigue. Le format `X/Y` indique la progression actuelle/totale.
 
-#### 4.1.4 Fils conducteurs de l'histoire
+#### 4.1.4 Fils Conducteurs de L'histoire
 
 ```
 [Fil:Retrouver la sœur de Jonah|Ouvert]
@@ -459,7 +466,7 @@ Les fils conducteurs suivent les questions ou objectifs majeurs de l'histoire. �
 [PJ:Alex|PV+3|Stress-1] (changements multiples)
 ```
 
-#### 4.1.6 Balises de référence
+#### 4.1.6 Balises de Référence
 
 Pour faire référence à un élément précédemment établi sans répéter les balises, utilisez le préfixe `#` :
 
@@ -484,7 +491,7 @@ Le `#` vous indique que cet élément a été défini plus tôt. Utilisez-le pou
 - Mentions ultérieures dans des scènes/sessions différentes : Utilisez `[#N:Nom]` pour signaler la référence
 - Changements de statut : Laissez tomber le `#` et montrez les nouvelles balises `[N:Nom|nouvelles_balises]`
 
-### 4.2 Suivi de la progression
+### 4.2 Suivi de la Progression
 
 Certaines choses dans votre campagne ne se produisent pas d'un coup — elles se construisent avec le temps. Le rituel prend douze étapes à compléter. La méfiance des gardes grandit à chaque bruit que vous faites. Votre plan d'évasion avance petit à petit. La réserve d'air diminue.
 
@@ -521,7 +528,7 @@ Le suivi de la progression vous donne un moyen visuel de voir ces forces s'accum
 
 Vous n'avez pas besoin de tout suivre numériquement. N'utilisez ces outils que lorsque l'accumulation est importante pour votre histoire et que vous voulez un moyen concret de la mesurer.
 
-### 4.3 Tables aléatoires & Générateurs
+### 4.3 Tables Aléatoires & Générateurs
 
 Le jeu en solo se nourrit de la surprise. Parfois, vous lancez sur une table pour voir ce que vous trouvez, ou vous utilisez un générateur pour créer un PNJ à la volée. Lorsque vous le faites, il est utile d'enregistrer ce que vous avez lancé — à la fois pour la transparence et pour que vous puissiez recréer la logique plus tard.
 
@@ -559,7 +566,127 @@ tbl: d100=42 -> "Une épée brisée"
 
 Cela dit, si vous jouez vite et sans chichis, vous pouvez sauter les détails du lancer et simplement enregistrer le résultat : `=> Je trouve une épée brisée [tbl]`. La partie importante est la fiction, pas les maths.
 
-### 4.4 Extraits narratifs
+#### 4.3.1 Définitions de tables en ligne
+
+Les exemples ci-dessus supposent que votre table réside ailleurs — un livre de règles, un supplément, un fichier séparé. Vous lancez les dés, vous enregistrez le résultat, et quiconque lit votre journal doit vous faire confiance (ou posséder le même livre) pour le vérifier.
+
+Mais que se passe-t-il si vous avez créé la table vous-même ? Si vous avez filtré les options d'un ensemble plus large pour l'adapter à votre campagne ? Si vous jouez à un jeu où la génération de contenu *est* le jeu — des systèmes comme Bivius Companion, des oracles maison, ou toute configuration où l'espace des possibles fait partie de l'acte créatif ?
+
+Dans ces cas, intégrer la table directement dans votre journal le rend **autonome**. Les lecteurs voient tout l'espace des options *et* le résultat. Pas de références externes, pas de "voir page 47".
+
+**Format :**
+
+```
+tbl: NomTable (dé)
+  1: Résultat un
+  2: Résultat deux
+  3: Résultat trois
+  4: Résultat quatre
+  5: Résultat cinq
+  6: Résultat six
+```
+
+Le nom de la table et le type de dé vont sur la première ligne. Chaque entrée est indentée avec son numéro et son résultat. Ensuite, lancez les dés normalement contre elle :
+
+```
+tbl: NomTable d6=3 -> Résultat trois
+```
+
+**Exemple complet :**
+
+```
+tbl: Rencontre en forêt (d6)
+  1-2: Rien — silence inquiétant
+  3: Traces d'animaux, fraîches
+  4: Campement abandonné
+  5: Voyageur sur la route
+  6: Quelque chose vous suit
+
+? Que rencontré-je sur le sentier forestier ?
+tbl: Rencontre en forêt d6=5 -> Voyageur sur la route
+=> Une silhouette encapuchonnée me fait signe. [N:Voyageur|inconnu|amical?]
+```
+
+**Quand définir en ligne vs référence externe :**
+
+- **En ligne** — lorsque vous avez créé la table, lorsque la table est courte (environ 10 entrées ou moins), lorsque le partage est important, ou lorsque la table n'existe que dans votre tête.
+- **Externe** — lorsque vous lancez sur une table publiée que les lecteurs peuvent consulter, ou lorsque la table est trop longue pour être incluse sans encombrer votre journal.
+
+Pour les tables plus longues, vous pouvez les définir une seule fois au début d'une session ou d'une campagne (un peu comme le bloc de statut des ressources), puis les référencer par leur nom tout au long du jeu :
+
+```
+tbl: Rencontre en forêt d6=5 -> Voyageur sur la route
+```
+
+#### 4.3.2 Ensembles d'options filtrés
+
+Certains jeux n'utilisent pas de tables numérotées — ils utilisent des listes curatées dans lesquelles vous choisissez ou tirez. Vous pouvez filtrer un ensemble plus large d'options pour ne garder que celles pertinentes pour votre scène, puis sélectionner de manière aléatoire ou intuitive.
+
+**Format :**
+
+```
+tbl: NomTable [Option A, Option B, Option C, Option D]
+```
+
+Les crochets signalent "ceci sont les options en jeu". Pas de numéros, pas de dés — juste l'espace des possibles.
+
+**Lancer contre un ensemble filtré :**
+
+```
+tbl: Ambiance [Tendu, Mélancolique, Optimiste, Étrange]
+tbl: Ambiance -> Étrange
+
+tbl: Météo [Clair, Brouillard, Pluie, Tempête]
+tbl: Météo d4=2 -> Brouillard
+=> Un brouillard épais arrive de la côte. La visibilité tombe à zéro.
+```
+
+**Construction d'un ensemble filtré à partir d'une source plus large :**
+
+```
+(note : filtrage des thèmes de Bivius Companion pour cet arc)
+tbl: Thème [Trahison, Rédemption, Sacrifice, Secrets]
+
+tbl: Thème -> Sacrifice
+=> La scène sera centrée sur ce que quelqu'un est prêt à abandonner.
+```
+
+#### 4.3.3 Blocs de résultats multilignes
+
+Certains générateurs produisent des résultats composés — plusieurs axes de sens qui créent ensemble quelque chose de plus grand qu'un simple jet. Un PNJ peut avoir un rôle, un trait de personnalité et une motivation. Un lieu peut avoir une caractéristique, une ambiance et un secret. Enregistrer chaque axe rend la logique créative transparente.
+
+**Format :**
+
+```
+gen: NomGénérateur
+  Axe1: jet -> résultat
+  Axe2: jet -> résultat
+  Axe3: jet -> résultat
+```
+
+Chaque axe est indenté sous le nom du générateur. Les détails du jet sont facultatifs — incluez-les lorsque la transparence est importante, passez-les lorsque la rapidité prime.
+
+**Exemple de générateur de PNJ :**
+
+```
+gen: PNJ (maison)
+  Rôle: d6=3 -> Marchand
+  Trait: d6=5 -> Secret
+  Envie: d6=1 -> S'échapper
+=> [N:Marchand anonyme|secret|veut fuir la ville]
+```
+
+**Exemple de générateur de lieu :**
+
+```
+gen: Ruine (tables d6 maison)
+  Caractéristique: d6=4 -> Tour effondrée
+  Ambiance: d6=2 -> Silence oppressant
+  Secret: d6=6 -> Passage caché sous les décombres
+=> [L:Vieille tour de guet|effondrée|inquiétante|passage caché]
+```
+
+### 4.4 Extraits Narratifs
 
 Voici un secret : **vous n'avez pas du tout besoin d'écrire de narration**. Le raccourci capture tout mécaniquement. Mais parfois, la fiction exige plus — un dialogue trop parfait pour ne pas être enregistré, une description qui plante le décor, un document que votre personnage trouve.
 
@@ -599,7 +726,7 @@ Je crains pour notre santé mentale."
 
 **Quelle quantité de narration devriez-vous écrire ?** Seulement autant que cela vous sert. Si vous jouez pour vous-même et que le raccourci vous dit tout ce que vous devez vous rappeler, sautez la prose. Si vous partagez votre journal ou que vous aimez le processus d'écriture, ajoutez-en plus. Il n'y a pas de bonne quantité — juste ce qui rend votre journal utile et agréable pour vous.
 
-### 4.5 Notes méta
+### 4.5 Notes Méta
 
 Parfois, vous avez besoin de sortir de la fiction et de vous laisser une note : un rappel sur une règle maison que vous testez, une réflexion sur la façon dont une scène a été ressentie, une question à revoir plus tard, ou une clarification sur votre interprétation d'une règle.
 
@@ -627,7 +754,7 @@ C'est à cela que servent les notes méta — vos apartés hors personnage pour 
 
 Pensez-y comme le commentaire du réalisateur sur un film. La plupart du temps, vous regardez simplement le film. Occasionnellement, il y a une note intéressante en coulisses qui vaut la peine d'être partagée.
 
-## 5. Structure optionnelle
+## 5. Structure Optionnelle
 
 Jusqu'à présent, nous avons parlé de *ce que* vous écrivez (actions, jets, balises). Parlons maintenant de *la façon dont vous l'organisez*.
 
@@ -637,7 +764,7 @@ Cette section présente les éléments d'organisation : les en-têtes de campagn
 
 La différence clé ? **Les formats numérique et analogique gèrent la structure différemment.** Le markdown numérique utilise des titres et du YAML ; les carnets analogiques utilisent des en-têtes écrits et des marqueurs. Nous montrerons les deux.
 
-### 5.1 En-tête de campagne
+### 5.1 En-tête de Campagne
 
 Avant de vous plonger dans le jeu, il est utile d'enregistrer quelques bases : À quoi jouez-vous ? Quel système ? Quand avez-vous commencé ? Pensez-y comme la "page de couverture" de votre journal de campagne.
 
@@ -690,7 +817,7 @@ notes: Inspiré des séries de mystère pour adolescents des années 80
 - `[Inspiration]` — Médias qui ont inspiré la campagne
 - `[Outils de sécurité]` — Carte X, lignes/voiles, etc.
 
-### 5.2 En-tête de session
+### 5.2 En-tête de Session
 
 Un en-tête de session marque la frontière entre les sessions de jeu et fournit un contexte : quand avez-vous joué, combien de temps, que s'est-il passé ?
 
@@ -709,7 +836,7 @@ Un en-tête de session marque la frontière entre les sessions de jeu et fournit
 
 Comme les en-têtes de campagne, les formats numérique et analogique gèrent les sessions différemment. Choisissez le style qui correspond à votre support.
 
-#### 5.2.1 Format numérique (titre markdown)
+#### 5.2.1 Format Numérique (titre markdown)
 
 ```markdown
 ## Session 1
@@ -720,7 +847,7 @@ Comme les en-têtes de campagne, les formats numérique et analogique gèrent le
 **Objectifs :** Mettre en place le mystère central, établir le phare comme lieu clé.
 ```
 
-#### 5.2.2 Format analogique (en-tête écrit)
+#### 5.2.2 Format Analogique (en-tête écrit)
 
 ```
 === Session 1 ===
@@ -737,7 +864,7 @@ Comme les en-têtes de campagne, les formats numérique et analogique gèrent le
 - `[Notes]` — Variantes de règles, expériences ou conditions spéciales
 - `[Fils]` — Fils conducteurs actifs cette session
 
-### 5.3 Structure de scène
+### 5.3 Structure de Scène
 
 Les scènes sont l'unité de base du jeu au sein d'une session. Au plus simple, une scène n'est qu'un marqueur numéroté avec un contexte.
 
@@ -755,7 +882,7 @@ S1 *Bibliothèque de l'école après les cours*
 
 Le numéro de scène vous aide à suivre la progression et à référencer les événements plus tard. Le contexte (en italique/astérisques) encadre où et quand la scène se déroule.
 
-#### 5.3.1 Scènes séquentielles (Standard)
+#### 5.3.1 Scènes Séquentielles (Standard)
 
 La plupart des campagnes utilisent une numérotation séquentielle simple :
 
@@ -850,9 +977,9 @@ S9 *Quartiers du gardien de phare, présent*
 - Partez de la scène qui déclenche le flashback
 - Revenez à la numérotation séquentielle après
 - Gardez les flashbacks courts (1-3 scènes généralement)
-- Notez dans le contexte en revenant : `*Présent*` ou `*Retour à...*`
+- Notez dans le contexte en revenant : `*Présent*` ou `*Retour à…*`
 
-#### 5.3.3 Fils narratifs parallèles
+#### 5.3.3 Fils Narratifs Parallèles
 
 Lorsque vous suivez plusieurs scénarios qui se déroulent simultanément ou en alternance, utilisez des préfixes de fil.
 
@@ -939,7 +1066,7 @@ S14 *Entrée du phare, tous deux réunis*
 [PJ:Alex|blessé] rencontre [PJ:Jordan|inquiet]
 ```
 
-#### 5.3.4 Montages et ellipses temporelles
+#### 5.3.4 Montages et Ellipses Temporelles
 
 Pour les activités qui s'étendent dans le temps ou plusieurs vignettes rapides, utilisez la notation décimale.
 
@@ -1035,7 +1162,7 @@ S9 *Arrivée dans les Terres du Nord*
 => Épuisé et affamé, but j'y suis arrivé.
 ```
 
-#### 5.3.5 Choisir votre approche
+#### 5.3.5 Choisir votre Approche
 
 **Utilisez le séquentiel (S1, S2, S3) quand :**
 
@@ -1066,7 +1193,7 @@ S9 *Arrivée dans les Terres du Nord*
 - Collecte de ressources
 - Périodes d'entraînement/recherche
 
-#### 5.3.6 Éléments de contexte de scène
+#### 5.3.6 Éléments de Contexte de Scène
 
 Au-delà de la numérotation, enrichissez les scènes avec du contexte dans le cadre :
 
@@ -1110,13 +1237,13 @@ S1
 
 Choisissez le niveau de détail qui vous aide à suivre votre histoire. Plus de détails aident à la référence future ; moins de détails gardent les notes plus propres.
 
-## 6. Exemples complets
+## 6. Exemples Complets
 
 La théorie est une chose, mais voir la notation en action est ce qui la fait comprendre. Cette section montre des exemples de jeu complets dans différents styles — du raccourci ultra-compact aux journaux narratifs riches — afin que vous puissiez trouver l'approche qui vous convient.
 
 Chaque exemple démontre le même système de notation, juste avec différents niveaux de détail. Choisissez le style qui correspond à vos préférences, ou mélangez et associez selon les besoins de votre session.
 
-### 6.1 Journal minimaliste en raccourci
+### 6.1 Journal Minimaliste en Raccourci
 
 Raccourci pur, sans formatage — parfait pour un jeu rapide :
 
@@ -1126,7 +1253,7 @@ S2 @Fouiller d:6≥4 S => trouve clé [E:Indice 1/4] ?Piégé? ->Oi6 => oui, piq
 S3 @Esquiver d:3≤5 F => PV-2 [PJ:PV 6] => saigne, besoin de reculer
 ```
 
-### 6.2 Format numérique hybride
+### 6.2 Format Numérique Hybride
 
 Combine le raccourci avec la narration, en utilisant la structure markdown :
 
@@ -1152,7 +1279,7 @@ PJ : "Reste calme... reste juste calme."
 ```
 ````
 
-### 6.3 Format carnet analogique
+### 6.3 Format Carnet Analogique
 
 Même contenu que 6.2, formaté pour des notes manuscrites :
 
@@ -1173,7 +1300,7 @@ N (Garde) : "Qui est là ?"
 PJ : "Reste calme... reste juste calme."
 ```
 
-### 6.4 Journal de campagne complet (Numérique)
+### 6.4 Journal de Campagne Complet (Numérique)
 
 ````markdown
 ---
@@ -1262,7 +1389,7 @@ Quelqu'un est venu ici. Récemment.
 PJ (Alex, pensant) : "Cet endroit n'est pas aussi abandonné que tout le monde le pense..."
 ````
 
-### 6.5 Journal de campagne complet (Analogique)
+### 6.5 Journal de Campagne Complet (Analogique)
 
 ```
 === Journal de campagne : Mystère de Clearview ===
@@ -1333,13 +1460,13 @@ PJ (Alex) : "Cet endroit n'est pas aussi abandonné que tout le monde le pense..
 
 ```
 
-## 7. Bonnes pratiques
+## 7. Bonnes Pratiques
 
 Vous avez appris la notation — parlons maintenant de son utilisation efficace. Cette section présente des modèles éprouvés qui rendent vos journaux plus clairs et plus utiles, ainsi que des erreurs courantes à éviter.
 
 Considérez-les comme des lignes directrices issues de l'expérience collective de la communauté solo. Ce ne sont pas des règles rigides, mais elles vous aideront à créer des journaux faciles à lire, à référencer et à partager.
 
-### 7.1 Bonnes pratiques ✓
+### 7.1 Bonnes Pratiques ✓
 
 Ces modèles rendent vos journaux plus propres, plus faciles à rechercher et à référencer plus tard. Vous n'avez pas besoin de tous les suivre, mais ils représentent ce qui fonctionne bien pour la plupart des joueurs solo.
 
@@ -1380,7 +1507,7 @@ d: 5≥4 S -> Succès
 => Je passe inaperçu, le cœur battant.
 ```
 
-### 7.2 Mauvaises pratiques ✗
+### 7.2 Mauvaises Pratiques ✗
 
 Ce sont des pièmes courants qui rendent les journaux plus difficiles à lire ou à analyser. Si vous vous surprenez à faire cela, ne vous inquiétez pas — ajustez simplement pour la prochaine fois. Nous sommes tous passés par là !
 
@@ -1443,7 +1570,7 @@ Chaque modèle est disponible en formats **markdown numérique** et **carnet ana
 
 Ne les traitez pas comme des formulaires rigides. Ce sont des échafaudages. Une fois que vous serez à l'aise avec la notation, vous développerez probablement vos propres modèles qui répondront mieux à vos besoins spécifiques.
 
-### 8.1 Modèle de campagne (YAML numérique)
+### 8.1 Modèle de Campagne (YAML numérique)
 
 Pour les fichiers markdown numériques, utilisez le YAML front matter pour stocker les métadonnées de la campagne. Cela va tout en haut de votre fichier, avant tout autre contenu.
 
@@ -1474,7 +1601,7 @@ notes:
 Votre journal de jeu ici...
 ```
 
-### 8.2 Modèle de campagne (Analogique)
+### 8.2 Modèle de Campagne (Analogique)
 
 Pour les carnets papier, écrivez ce bloc d'en-tête au début de votre journal de campagne. Restez simple — vous pouvez toujours ajouter plus de détails plus tard si nécessaire.
 
@@ -1501,7 +1628,7 @@ S1 *Scène de départ*
 Votre journal de jeu ici...
 ```
 
-### 8.3 Modèle de session
+### 8.3 Modèle de Session
 
 Utilisez ceci au début de chaque session de jeu pour marquer les limites et fournir un contexte. La version numérique utilise des titres markdown ; la version analogique utilise des en-têtes écrits.
 
@@ -1532,7 +1659,7 @@ Remplissez ce qui est utile et sautez ce qui ne l'est pas. Le seul champ essenti
 S1 *Description de la scène*
 ```
 
-### 8.4 Modèle de scène rapide
+### 8.4 Modèle de Scène Rapide
 
 C'est votre modèle de travail — la structure de base que vous utiliserez scène après scène. Il est intentionnellement minimal : juste assez de structure pour vous garder orienté sans vous ralentir.
 
@@ -1551,7 +1678,7 @@ d: votre jet -> résultat
 ```
 ````
 
-## 9. Adaptation à votre système
+## 9. Adaptation à votre Système
 
 Voici la belle partie : cette notation fonctionne avec *n'importe quel* système de JDR solo. *Ironsworn*, *Mythic GME*, *Thousand Year Old Vampire*, votre propre système maison — peu importe. Les symboles de base restent les mêmes ; seuls les détails de la résolution changent.
 
@@ -1559,7 +1686,7 @@ Cette section vous montre comment adapter la notation de jet `d:` et les formats
 
 **L'idée clé :** La notation sépare la *mécanique* de la *fiction*. Votre système détermine comment la mécanique fonctionne ; la notation ne fait que les enregistrer de manière cohérente.
 
-### 9.1 Notation de jet spécifique au système
+### 9.1 Notation de Jet Spécifique au Système
 
 La notation `d:` fonctionne avec n'importe quel système — vous avez juste besoin de l'adapter à vos mécaniques de dés spécifiques. Voici à quoi ressemble la notation pour les systèmes de JDR solo populaires.
 
@@ -1595,14 +1722,14 @@ d: 4dF=+2 (++0-) +Compétence=3 = +5 -> Succès avec style
 d: 4dF=-1 (-0--) +Compétence=2 = +1 -> Égalité
 ```
 
-#### 9.1.5 OSR/D&D traditionnel
+#### 9.1.5 OSR/D&D Traditionnel
 
 ```
 d: d20=15+Mod=2=17 vs CA 16 -> Touche
 d: d20=8+Mod=-1=7 vs DC 10 -> Échec
 ```
 
-### 9.2 Adaptations de l'oracle
+### 9.2 Adaptations de L'oracle
 
 Différents systèmes d'oracle ont différents formats de sortie. Certains donnent des réponses oui/non, d'autres génèrent des résultats complexes. Voici comment enregistrer les résultats des systèmes d'oracle populaires.
 
@@ -1639,11 +1766,11 @@ gen: Motivation UNE -> Pouvoir + Réputation
 => [N:Baron|ambitieux|cherche la reconnaissance]
 ```
 
-### 9.3 Gestion des cas particuliers
+### 9.3 Gestion des Cas Particuliers
 
 Chaque système a ses bizarreries. Voici comment gérer les situations courantes qui ne correspondent pas aux modèles de notation de base.
 
-#### 9.3.1 Jets multiples en une seule action
+#### 9.3.1 Jets Multiples en une Seule Action
 
 Lorsque vous devez faire plusieurs jets pour une seule action :
 
@@ -1671,7 +1798,7 @@ d: FOR d20=12 vs marin d20=15 -> 12≤15 Échec
 => Sa poigne se resserre. Mon bras claque sur la table.
 ```
 
-#### 9.3.2 Résultats d'oracle ambigus
+#### 9.3.2 Résultats D'oracle Ambigus
 
 Lorsque l'oracle donne des résultats flous ou contradictoires :
 
@@ -1693,7 +1820,7 @@ Ou relancez si vous êtes vraiment bloqué :
 => Il travaille activement contre moi.
 ```
 
-#### 9.3.3 Conséquences imbriquées
+#### 9.3.3 Conséquences Imbriquées
 
 Parfois, une conséquence en entraîne une autre, créant une cascade :
 
@@ -1707,7 +1834,7 @@ d: Crochetage 5≥4 -> Succès
 
 **Quand utiliser :** Succès ou échecs majeurs avec de multiples effets d'entraînement. N'en abusez pas — la plupart des actions ont une conséquence claire.
 
-#### 9.3.4 Questions à l'oracle qui échouent
+#### 9.3.4 Questions à L'oracle qui Échouent
 
 Et si l'oracle n'aide pas ?
 
@@ -1724,7 +1851,7 @@ Et si l'oracle n'aide pas ?
 
 ## Annexes
 
-### A. Légende de la notation de JDR Solo
+### A. Légende de la Notation de JDR Solo
 
 Ceci est votre référence rapide — l'aide-mémoire à garder à portée de main pendant que vous jouez. Vous avez oublié ce que signifie `=>` ? Besoin de vous rappeler comment formater une horloge ? Cette section est là pour vous.
 
@@ -1732,17 +1859,17 @@ Pensez-y comme la "liste de vocabulaire" de la notation. Tout ce qui est ici a �
 
 Mettez cette section en favori. Vous y reviendrez souvent lors de vos premières sessions, puis de moins en moins à mesure que la notation deviendra une seconde nature.
 
-#### A.1 Symboles de base
+#### A.1 Symboles de Base
 
 | Symbole | Signification | Exemple |
 |---|---|---|
 | `@` | Action du joueur (mécanique) | `@ Crocheter la serrure` |
 | `?` | Question à l'oracle (monde/incertitude) | `? Y a-t-il quelqu'un à l'intérieur ?` |
 | `d:` | Jet de mécanique/résultat | `d: 2d6=8 vs ND 7 -> Succès` |
-| `->` | Résultat de l'oracle/des dés | `-> Oui, mais...` |
+| `->` | Résultat de l'oracle/des dés | `-> Oui, mais…` |
 | `=>` | Conséquence/résultat | `=> La porte s'ouvre silencieusement` |
 
-#### A.2 Opérateurs de comparaison
+#### A.2 Opérateurs de Comparaison
 
 - `≥` ou `>=` — Supérieur ou égal (atteint/bat le ND)
 - `≤` ou `<=` — Inférieur ou égal (n'atteint pas le ND)
@@ -1750,7 +1877,7 @@ Mettez cette section en favori. Vous y reviendrez souvent lors de vos premières
 - `S` — Indicateur de succès
 - `F` — Indicateur d'échec
 
-#### A.3 Balises de suivi
+#### A.3 Balises de Suivi
 
 - `[N:Nom|balises]` — PNJ (première mention)
 - `[#N:Nom]` — PNJ (référence à une mention antérieure)
@@ -1759,13 +1886,13 @@ Mettez cette section en favori. Vous y reviendrez souvent lors de vos premières
 - `[Fil:Nom|état]` — Fil conducteur de l'histoire
 - `[PJ:Nom|stats]` — Personnage joueur
 
-#### A.4 Suivi de la progression
+#### A.4 Suivi de la Progression
 
 - `[Horloge:Nom X/Y]` — Horloge (se remplit)
 - `[Piste:Nom X/Y]` — Piste de progression
 - `[Compteur:Nom X]` — Compte à rebours
 
-#### A.5 Génération aléatoire
+#### A.5 Génération Aléatoire
 
 - `tbl: jet -> résultat` — Consultation simple de table
 - `gen: système -> résultat` — Générateur complexe
@@ -1783,15 +1910,15 @@ Mettez cette section en favori. Vous y reviendrez souvent lors de vos premières
 
 #### A.8 Méta
 
-- `(note : ...)` — Réflexion, rappel, règle maison
+- `(note : …)` — Réflexion, rappel, règle maison
 
-#### A.9 Exemple de ligne complète
+#### A.9 Exemple de Ligne Complète
 
 ```
 S3 @Crocheter serrure d:15≥14 S => porte s'ouvre silencieusement [N:Garde|alerte]
 ```
 
-## B. FAQ
+### B. FAQ
 
 Vous avez des questions ? Vous n'êtes pas seul. Voici les questions les plus courantes des personnes qui apprennent la notation, avec des réponses directes.
 
@@ -1824,18 +1951,20 @@ R : Non. Utilisez `S1`, `S2`, `S3` pour la simplicité, mais créez des branches
 **Q : Dois-je mettre à jour les balises à chaque changement ?**
 R : Montrez explicitement les changements significatifs : `[N:Garde|alerte]` → `[N:Garde|inconscient]`. Les changements mineurs peuvent être implicites par la narration.
 
-## C. Philosophie de conception des symboles
+**Q : Si je publie un journal de session enregistré publiquement, doit-il être sous licence ShareAlike ?**
+R : Non. La licence CC BY-SA 4.0 couvre le document de spécification Lonelog, pas le contenu créé à l'aide de la notation. Vos journaux de session sont votre propre travail créatif indépendant — publiez-les et licenciez-les comme vous le souhaitez. La clause ShareAlike ne s'appliquerait que si vous adaptiez ou redistribuiez la spécification elle-même, par exemple en créant un nouveau système de notation à partir de Lonelog.
+
+**Q : J'ai créé ma propre table aléatoire. Comment l'inclure dans mon journal ?**
+R : Définissez-la en ligne avec `tbl: Nom (dé)` suivi des entrées indentées, ou utilisez `tbl: Nom [Option A, Option B, ...]` pour des ensembles d'options non numérotés. Voir §4.3.1 et §4.3.2. Cela rend votre journal autonome — les lecteurs voient toute la table et le résultat sans avoir besoin de références externes.
+
+### C. Philosophie de Conception des Symboles
 
 Les symboles de Lonelog ont été choisis pour des raisons spécifiques :
 
 - **`@` (Action)** : Représente "à ce moment" ou l'acteur qui agit. Changé de `>` dans la v2.0 pour éviter le conflit avec les citations en bloc de Markdown.
-
 - **`?` (Question)** : Symbole universel pour l'interrogation. Inchangé par rapport à la v2.0.
-
 - **`d:` (Dés/Résolution)** : Abréviation claire pour les jets de dés. Inchangé par rapport à la v2.0.
-
 - **`->` (Résolution)** : Conservé de la v2.0. Maintenant unifié pour TOUTES les résolutions (dés et oracle). La flèche montre visuellement "ceci mène au résultat".
-
 - **`=>` (Conséquence)** : Conservé de la v2.0. La double flèche montre les effets en cascade. Utilisation clarifiée : conséquences uniquement (la v2.0 surchargeait ce symbole pour les résultats de dés également).
 
 **Compatibilité Markdown** : Tous les symboles fonctionnent proprement dans les blocs de code et n'entrent pas en conflit avec le formatage markdown ou les opérateurs mathématiques. Enveloppez toujours la notation dans des blocs de code lorsque vous utilisez le markdown numérique pour éviter les conflots avec les extensions Markdown.
@@ -1848,14 +1977,15 @@ Cette notation est inspirée de la [Valley Standard](https://alfredvalley.itch.i
 
 **Remerciements à :**
 
-- matita pour la méthode `+`/`-` pour suivre les changements dans les balises
-- flyincaveman pour la suggestion sur l'utilisation du symbole `@` pour les actions des personnages (dans la tradition des premiers JDR en ASCII)
-- r/solorpgplay et r/Solo_Roleplaying pour l'accueil positif de cette notation et les retours utiles.
-- Enrico Fasoli pour les tests et les retours
+- matita pour la méthode `+`/`-` pour suivre les changements dans les balises,
+- flyincaveman pour la suggestion sur l'utilisation du symbole `@` pour les actions des personnages (dans la tradition des premiers JDR en ASCII),
+- r/solorpgplay et r/Solo_Roleplaying pour l'accueil positif de cette notation et les retours utiles,
+- Enrico Fasoli pour les tests et les retours,
+- Eilir Mistwind pour la traduction française.
 
 **Historique des versions :**
 
-- v 1.0.0 : A évolué à partir de Solo TTRPG Notation v2.0 par Roberto Bisceglie
+- v 1.1.0 : Évolué à partir de Lonelog v1.0 par Roberto Bisceglie
 
 Ce travail est sous licence **Creative Commons Attribution-ShareAlike 4.0 International**.
 
