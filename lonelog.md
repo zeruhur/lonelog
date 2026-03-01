@@ -2,7 +2,7 @@
 title: Lonelog
 subtitle: "A Standard Notation for Solo RPG Session Logging"
 author: Roberto Bisceglie
-version: 1.0.0
+version: 1.1.0
 license: CC BY-SA 4.0
 lang: en
 ---
@@ -74,6 +74,8 @@ Think of it as concentric circles:
 - **Optional Structure** (for organization): Campaign Header, Session Header, Scenes
 
 **Start small.** Try the core notation for one scene. If it clicks, great—keep going. If you need more, layer in what helps. Your notes should serve your play, not the other way around.
+
+**A note on licensing:** This work is released under the CC BY-SA 4.0 license, that covers the Lonelog specification itself — this document. Session logs, actual plays, and other content you create using Lonelog notation are your own work and are not subject to this license. Write, publish, and license your sessions however you like.
 
 ### 1.4 Quick Start: Your First Session
 
@@ -555,6 +557,162 @@ tbl: d100=42 -> "A broken sword"
 3. **Learning**: Over time, you see which tables you use most
 
 That said, if you're playing fast and loose, you can skip the roll details and just record the result: `=> I find a broken sword [tbl]`. The important part is the fiction, not the math.
+
+#### 4.3.1 Inline Table Definitions
+
+The examples above assume your table lives somewhere else — a rulebook, a supplement, a separate file. You roll, you record the result, and anyone reading your log has to trust you (or own the same book) to verify it.
+
+But what if you made the table yourself? What if you filtered options from a larger set to fit your campaign? What if you're playing a game where content generation *is* the game — systems like Bivius Companion, homebrew oracles, or any setup where the possibility space is part of the creative act?
+
+In those cases, embedding the table directly in your log makes it **self-contained**. Readers see the full option space *and* the result. No external references, no "see page 47."
+
+**Format:**
+
+```
+tbl: TableName (die)
+  1: Result one
+  2: Result two
+  3: Result three
+  4: Result four
+  5: Result five
+  6: Result six
+```
+
+The table name and die type go on the first line. Each entry is indented with its number and result. Then roll against it normally:
+
+```
+tbl: TableName d6=3 -> Result three
+```
+
+**Complete example:**
+
+```
+tbl: Forest Encounter (d6)
+  1-2: Nothing — eerie silence
+  3: Animal tracks, fresh
+  4: Abandoned campsite
+  5: Traveler on the road
+  6: Something is following you
+
+? What do I encounter on the forest path?
+tbl: Forest Encounter d6=5 -> Traveler on the road
+=> A cloaked figure waves me down. [N:Traveler|unknown|friendly?]
+```
+
+**When to define inline vs. reference externally:**
+
+- **Inline** — when you created the table, when the table is short (roughly 10 entries or fewer), when shareability matters, or when the table only exists in your head
+- **External** — when you're rolling on a published table that readers can look up, or when the table is too long to include without cluttering your log
+
+For longer tables, you can define them once at the start of a session or campaign (much like the Resource Status Block pattern), then reference them by name throughout play:
+
+```
+tbl: Forest Encounter d6=5 -> Traveler on the road
+```
+
+If the table was defined earlier in the log, readers can scroll back to find it. If it's a published table, the name and die type provide enough context to locate the source.
+
+#### 4.3.2 Filtered Option Sets
+
+Some games don't use numbered tables — they use curated lists you pick or draw from. You might filter a larger set of options down to the ones relevant to your scene, then select randomly or intuitively.
+
+**Format:**
+
+```
+tbl: TableName [Option A, Option B, Option C, Option D]
+```
+
+Square brackets signal "these are the options in play." No numbers, no die — just the possibility space.
+
+**Rolling against a filtered set:**
+
+```
+tbl: Mood [Tense, Melancholic, Hopeful, Uncanny]
+tbl: Mood -> Uncanny
+
+tbl: Weather [Clear, Fog, Rain, Storm]
+tbl: Weather d4=2 -> Fog
+=> A thick fog rolls in from the coast. Visibility drops to nothing.
+```
+
+**Building a filtered set from a larger source:**
+
+```
+(note: filtering Bivius Companion themes for this arc)
+tbl: Theme [Betrayal, Redemption, Sacrifice, Secrets]
+
+tbl: Theme -> Sacrifice
+=> The scene will center on what someone is willing to give up.
+```
+
+**Dynamic filtering mid-session:**
+
+```
+tbl: Available Leads [The dockworker's tip, The torn letter, The locked room]
+tbl: Available Leads -> The torn letter
+=> I follow up on the letter I found in Session 2.
+[Thread:Torn Letter|Open]
+```
+
+The key difference from numbered tables: filtered sets capture *what was available*, not just what was chosen. This is especially valuable when you're sharing logs — readers see the roads not taken alongside the one you picked.
+
+#### 4.3.3 Multi-Line Result Blocks
+
+Some generators produce compound results — multiple axes of meaning that together create something greater than any single roll. An NPC might have a role, a personality trait, and a motivation. A location might have a feature, a mood, and a secret. Recording each axis makes the creative logic transparent.
+
+**Format:**
+
+```
+gen: GeneratorName
+  Axis1: roll -> result
+  Axis2: roll -> result
+  Axis3: roll -> result
+```
+
+Each axis is indented under the generator name. Roll details are optional — include them when transparency matters, skip them when speed matters.
+
+**NPC generator example:**
+
+```
+gen: NPC (custom)
+  Role: d6=3 -> Merchant
+  Trait: d6=5 -> Secretive
+  Want: d6=1 -> Escape
+=> [N:Unnamed Merchant|secretive|wants to flee town]
+```
+
+**Location generator example:**
+
+```
+gen: Ruin (custom d6 tables)
+  Feature: d6=4 -> Collapsed tower
+  Mood: d6=2 -> Oppressive silence
+  Secret: d6=6 -> Hidden passage beneath the rubble
+=> [L:Old Watchtower|collapsed|eerie|hidden passage]
+```
+
+**With inline table definitions** — you can combine these features. Define the axes, then roll:
+
+```
+tbl: NPC Role (d6) [Guard, Merchant, Scholar, Beggar, Noble, Priest]
+tbl: NPC Trait (d6) [Nervous, Secretive, Boisterous, Cold, Kind, Obsessive]
+tbl: NPC Want (d6) [Escape, Revenge, Wealth, Knowledge, Power, Peace]
+
+gen: NPC
+  Role: d6=2 -> Merchant
+  Trait: d6=6 -> Obsessive
+  Want: d6=4 -> Knowledge
+=> [N:The Collector|merchant|obsessive|seeks forbidden texts]
+```
+
+**Minimal format** — when you just need the output:
+
+```
+gen: NPC -> Merchant / Secretive / Escape
+=> [N:Unnamed Merchant|secretive|wants to flee]
+```
+
+Use the expanded multi-line format when you want to show your work — especially useful in shared logs, for generators you created yourself, or when you want to trace how the fiction emerged from the mechanics. Use the minimal single-line format when speed matters more than process.
 
 ### 4.4 Narrative Excerpts
 
@@ -1823,6 +1981,12 @@ A: No. Use `S1`, `S2`, `S3` for simplicity, but branch (`S3a`, `S3b`) or use thr
 **Q: Should I update tags every time something changes?**  
 A: Show significant changes explicitly: `[N:Guard|alert]` → `[N:Guard|unconscious]`. Minor changes can be implied through narrative.
 
+**Q: If I post a recorded session log publicly, does it need to be under the ShareAlike license?**  
+A: No. The CC BY-SA 4.0 license covers the Lonelog specification document, not content created using the notation. Your session logs are your own independent creative work — publish and license them however you choose. The ShareAlike clause would only apply if you were adapting or redistributing the spec itself, for example by forking Lonelog into a new notation system.
+
+**Q: I made my own random table. How do I include it in my log?**  
+A: Define it inline with `tbl: Name (die)` followed by indented entries, or use `tbl: Name [Option A, Option B, ...]` for unnumbered option sets. See §4.3.1 and §4.3.2. This makes your log self-contained — readers see the full table and the result without needing external references.
+
 ## C. Symbol Design Philosophy
 
 Lonelog's symbols were chosen for specific reasons:
@@ -1854,6 +2018,7 @@ This notation is inspired by the [Valley Standard](https://alfredvalley.itch.io/
 
 **Version History:**
 
+- v 1.1.0: Clarified the use of the license. Added specifications for inline definitions, filtered option sets and multi-line result blocks in section 4.3.
 - v 1.0.0: Evolved from Solo TTRPG Notation v2.0 by Roberto Bisceglie
 
 This work is licensed under the **Creative Commons Attribution-ShareAlike 4.0 International License**.

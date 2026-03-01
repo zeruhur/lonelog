@@ -674,7 +674,7 @@
 #show: doc => worldbuilders(
   title: "Lonelog",
   subtitle: "Una notazione standard per registrare le tue sessioni di GDR solitario",
-  version: "1.0.0",
+  version: "1.1.0",
   authors: ("Roberto Bisceglie", ),
   date: none,
   abstract: none,
@@ -755,6 +755,8 @@ Pensalo come a cerchi concentrici:
 - #strong[Struttura Opzionale] (per l'organizzazione): Intestazione Campagna, Intestazione Sessione, Scene
 
 #strong[Inizia in piccolo.] Prova la notazione di base per una scena. Se scatta qualcosa, ottimo! Continua. Se hai bisogno di altro, aggiungi ciò che ti aiuta. Le tue note dovrebbero servire il tuo gioco, non il contrario.
+
+#strong[Una nota sulla licenza:] Quest'opera è rilasciata sotto licenza CC BY-SA 4.0, che copre la specifica Lonelog stessa --- questo documento. I registri di sessione, gli actual play e altri contenuti creati utilizzando la notazione Lonelog sono opera tua e non sono soggetti a questa licenza. Scrivi, pubblica e licenzia le tue sessioni come preferisci.
 
 == 1.4 Quick Start: La Tua Prima Sessione
 <quick-start-la-tua-prima-sessione>
@@ -846,17 +848,18 @@ Nei taccuini cartacei:
 <esempi-di-formato>
 === Markdown digitale
 <markdown-digitale>
-```markdown
+````markdown
 ## Sessione 1
 *Data: 03-09-2025 | Durata: 1h30*
 
 ### S1 *Biblioteca scolastica dopo l'orario di chiusura*
-```
 
-\@ Intrufolarsi per controllare gli archivi d: Furtività d6=5 vs CD 4 -\> Successo =\> Entro inosservato. \[L:Biblioteca|buia|silenziosa\]
-
-```
-```
+    ```
+    @ Intrufolarsi per controllare gli archivi
+    d: Furtività d6=5 vs CD 4 -> Successo
+    => Entro inosservato. [L:Biblioteca|buia|silenziosa]
+    ```
+````
 
 === Taccuino analogico
 <taccuino-analogico>
@@ -1240,6 +1243,162 @@ tbl: d100=42 -> "Una spada spezzata"
 + #strong[Apprendimento];: Nel tempo, vedi quali tabelle usi di più
 
 Detto questo, se giochi in modo rapido e informale, puoi saltare i dettagli del tiro e registrare solo il risultato: `=> Trovo una spada spezzata [tbl]`. La parte importante è la finzione, non la matematica.
+
+=== 4.3.1 Definizioni di Tabelle Inline
+<definizioni-di-tabelle-inline>
+Gli esempi sopra assumono che la tua tabella si trovi da qualche altra parte --- un manuale, un supplemento, un file separato. Tiri, registri il risultato e chiunque legga il tuo registro deve fidarsi di te (o possedere lo stesso libro) per verificarlo.
+
+Ma cosa succede se hai creato tu la tabella? E se hai filtrato le opzioni da un set più ampio per adattarle alla tua campagna? E se stai giocando a un gioco in cui la generazione di contenuti #emph[è] il gioco --- sistemi come Bivius Companion, oracoli homebrew o qualsiasi configurazione in cui lo spazio delle possibilità è parte dell'atto creativo?
+
+In questi casi, incorporare la tabella direttamente nel tuo registro lo rende #strong[autonomo];. I lettori vedono l'intero spazio delle opzioni #emph[e] il risultato. Nessun riferimento esterno, nessun "vedi pagina 47".
+
+#strong[Formato:]
+
+```
+tbl: NomeTabella (dado)
+  1: Risultato uno
+  2: Risultato due
+  3: Risultato tre
+  4: Risultato quattro
+  5: Risultato cinque
+  6: Risultato sei
+```
+
+Il nome della tabella e il tipo di dado vanno sulla prima riga. Ogni voce è rientrata con il suo numero e risultato. Poi tira contro di essa normalmente:
+
+```
+tbl: NomeTabella d6=3 -> Risultato tre
+```
+
+#strong[Esempio completo:]
+
+```
+tbl: Incontro nella Foresta (d6)
+  1-2: Niente — silenzio inquietante
+  3: Tracce di animali, fresche
+  4: Accampamento abbandonato
+  5: Viaggiatore sulla strada
+  6: Qualcosa ti sta seguendo
+
+? Cosa incontro sul sentiero della foresta?
+tbl: Incontro nella Foresta d6=5 -> Viaggiatore sulla strada
+=> Una figura incappucciata mi fa cenno di fermarmi. [N:Viaggiatore|sconosciuto|amichevole?]
+```
+
+#strong[Quando definire inline vs.~fare riferimento esternamente:]
+
+- #strong[Inline] --- quando hai creato tu la tabella, quando la tabella è breve (circa 10 voci o meno), quando la condivisibilità è importante o quando la tabella esiste solo nella tua testa
+- #strong[Esterno] --- quando stai tirando su una tabella pubblicata che i lettori possono consultare, o quando la tabella è troppo lunga per essere inclusa senza ingombrare il tuo registro
+
+Per tabelle più lunghe, puoi definirle una volta all'inizio di una sessione o campagna (molto simile al modello del Blocco Stato Risorse), quindi fare riferimento ad esse per nome durante il gioco:
+
+```
+tbl: Incontro nella Foresta d6=5 -> Viaggiatore sulla strada
+```
+
+Se la tabella è stata definita in precedenza nel registro, i lettori possono scorrere indietro per trovarla. Se è una tabella pubblicata, il nome e il tipo di dado forniscono abbastanza contesto per individuare la fonte.
+
+=== 4.3.2 Set di Opzioni Filtrate
+<set-di-opzioni-filtrate>
+Alcuni giochi non usano tabelle numerate --- usano elenchi curati da cui scegli o estrai. Potresti filtrare un set più ampio di opzioni fino a quelle rilevanti per la tua scena, quindi selezionare casualmente o intuitivamente.
+
+#strong[Formato:]
+
+```
+tbl: NomeTabella [Opzione A, Opzione B, Opzione C, Opzione D]
+```
+
+Le parentesi quadre segnalano "queste sono le opzioni in gioco". Niente numeri, niente dadi --- solo lo spazio delle possibilità.
+
+#strong[Tirare contro un set filtrato:]
+
+```
+tbl: Umore [Teso, Malinconico, Speranzoso, Inquietante]
+tbl: Umore -> Inquietante
+
+tbl: Meteo [Sereno, Nebbia, Pioggia, Tempesta]
+tbl: Meteo d4=2 -> Nebbia
+=> Una fitta nebbia arriva dalla costa. La visibilità scende a zero.
+```
+
+#strong[Costruire un set filtrato da una fonte più ampia:]
+
+```
+(nota: filtro i temi di Bivius Companion per questo arco narrativo)
+tbl: Tema [Tradimento, Redenzione, Sacrificio, Segreti]
+
+tbl: Tema -> Sacrificio
+=> La scena si concentrerà su ciò che qualcuno è disposto a cedere.
+```
+
+#strong[Filtraggio dinamico a metà sessione:]
+
+```
+tbl: Piste Disponibili [La soffiata del portuale, La lettera strappata, La stanza chiusa]
+tbl: Piste Disponibili -> La lettera strappata
+=> Seguo la pista della lettera che ho trovato nella Sessione 2.
+[Thread:Lettera Strappata|Aperto]
+```
+
+La differenza chiave rispetto alle tabelle numerate: i set filtrati catturano #emph[ciò che era disponibile];, non solo ciò che è stato scelto. Questo è particolarmente prezioso quando condividi i registro --- i lettori vedono le strade non prese insieme a quella che hai scelto.
+
+=== 4.3.3 Blocchi di Risultati Multi-riga
+<blocchi-di-risultati-multi-riga>
+Alcuni generatori producono risultati composti --- assi multipli di significato che insieme creano qualcosa di più grande di ogni singolo tiro. Un PNG potrebbe avere un ruolo, un tratto di personalità e una motivazione. Un luogo potrebbe avere una caratteristica, un'atmosfera e un segreto. Registrare ogni asse rende trasparente la logica creativa.
+
+#strong[Formato:]
+
+```
+gen: NomeGeneratore
+  Asse1: tiro -> risultato
+  Asse2: tiro -> risultato
+  Asse3: tiro -> risultato
+```
+
+Ogni asse è rientrato sotto il nome del generatore. I dettagli del tiro sono opzionali --- includili quando la trasparenza è importante, saltali quando la velocità è importante.
+
+#strong[Esempio generatore PNG:]
+
+```
+gen: PNG (personalizzato)
+  Ruolo: d6=3 -> Mercante
+  Tratto: d6=5 -> Riservato
+  Desiderio: d6=1 -> Fuggire
+=> [N:Mercante Senzanome|riservato|vuole fuggire dalla città]
+```
+
+#strong[Esempio generatore Luogo:]
+
+```
+gen: Rovina (tabelle d6 personalizzate)
+  Caratteristica: d6=4 -> Torre crollata
+  Atmosfera: d6=2 -> Silenzio oppressivo
+  Segreto: d6=6 -> Passaggio nascosto sotto le macerie
+=> [L:Vecchia Torre di Guardia|crollata|inquietante|passaggio nascosto]
+```
+
+#strong[Con definizioni di tabelle inline] --- puoi combinare queste funzionalità. Definisci gli assi, poi tira:
+
+```
+tbl: Ruolo PNG (d6) [Guardia, Mercante, Studioso, Mendicante, Nobile, Prete]
+tbl: Tratto PNG (d6) [Nervoso, Riservato, Chiassoso, Freddo, Gentile, Ossessivo]
+tbl: Desiderio PNG (d6) [Fuga, Vendetta, Ricchezza, Conoscenza, Potere, Pace]
+
+gen: PNG
+  Ruolo: d6=2 -> Mercante
+  Tratto: d6=6 -> Ossessivo
+  Desiderio: d6=4 -> Conoscenza
+=> [N:Il Collezionista|mercante|ossessivo|cerca testi proibiti]
+```
+
+#strong[Formato minimale] --- quando hai solo bisogno dell'output:
+
+```
+gen: PNG -> Mercante / Riservato / Fuga
+=> [N:Mercante Senzanome|riservato|vuole fuggire]
+```
+
+Usa il formato espanso multi-riga quando vuoi mostrare il tuo lavoro --- particolarmente utile nei registro condivisi, per generatori che hai creato tu stesso, o quando vuoi tracciare come la finzione è emersa dalle meccaniche. Usa il formato minimale a riga singola quando la velocità conta più del processo.
 
 == 4.4 Estratti Narrativi
 <estratti-narrativi>
@@ -2508,6 +2667,14 @@ R: No.~Usa `S1`, `S2`, `S3` per semplicità, ma dirama (`S3a`, `S3b`) o usa i pr
 
 R: Mostra esplicitamente i cambiamenti significativi: `[N:Guardia|vigile]` → `[N:Guardia|priva di sensi]`. I cambiamenti minori possono essere impliciti nella narrazione.
 
+#strong[D: Se pubblico pubblicamente un registro di sessione, deve essere sotto licenza ShareAlike?]
+
+R: No.~La licenza CC BY-SA 4.0 copre il documento di specifica Lonelog, non il contenuto creato utilizzando la notazione. I tuoi registri di sessione sono opera creativa indipendente --- pubblicali sotto la licenza che preferisci. La clausola ShareAlike si applicherebbe solo se stessi adattando o ridistribuendo la specifica stessa, ad esempio creando un fork di Lonelog in un nuovo sistema di notazione.
+
+#strong[D: Ho creato la mia tabella casuale. Come la includo nel mio registro?]
+
+R: Definiscila inline con `tbl: Nome (dado)` seguito da voci rientrate, o usa `tbl: Nome [Opzione A, Opzione B, ...]` per set di opzioni non numerati. Vedi §4.3.1 e §4.3.2. Questo rende il tuo registro autonomo --- i lettori vedono l'intera tabella e il risultato senza bisogno di riferimenti esterni.
+
 == C. Filosofia del Design dei Simboli
 <c.-filosofia-del-design-dei-simboli>
 I simboli di Lonelog sono stati scelti per ragioni specifiche:
@@ -2536,6 +2703,7 @@ Questa notazione è ispirata al #link("https://alfredvalley.itch.io/the-valley-s
 
 #strong[Cronologia Versioni:]
 
+- v 1.1.0: Chiarito l'uso della licenza. Aggiunte specifiche per: definizioni inline, set di opzioni filtrate e blocchi di risultati multi-riga nella sezione 4.3.
 - v 1.0.0: Evoluto da Notazione per GDR Solitario v2.0 di Roberto Bisceglie
 
 Questo lavoro è distribuito sotto la licenza #strong[Creative Commons Attribution-ShareAlike 4.0 International];.
