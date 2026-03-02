@@ -1,15 +1,10 @@
 ---
-obsidianUIMode: preview
-Création: 2026-02-08 12:00
-Modification: 2026-03-01 15:00
-tags: [Méthodologie, Système]
-Type:
-  - Méthodologie
-Source: Lonelog
-Titre: Lonelog
+title: Lonelog
+subtitle: "Une notation standardisée pour la prise de note de session JDR solo"
+author: Roberto Bisceglie
 version: 1.1.0
+license: CC BY-SA 4.0
 lang: fr
-aliases: []
 ---
 
 # Lonelog
