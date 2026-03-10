@@ -1,6 +1,5 @@
 project:
   type: default
-  output-dir: output/en/
 
 filters:
   - _extensions/pagebreak.lua  # Converts --- to pagebreaks in Typst
