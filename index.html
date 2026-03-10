@@ -16,6 +16,13 @@
       loadNavbar: true,
       relativePath: true,
       fallbackLanguages: ['en'],
+      plugins: [
+        function(hook) {
+          hook.beforeEach(function(content) {
+            return content.replace(/^---[\s\S]*?---\n/, '');
+          });
+        }
+      ],
       search: {
         paths: 'auto',
         placeholder: {
