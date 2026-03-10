@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+
+:root {
+  --theme-color: #1a1a1a;       /* nero profondo al posto del verde */
+  --sidebar-width: 17rem;
+}
+
+/* Tipografia */
+body {
+  font-family: 'Lora', Georgia, serif;
+}
+
+h1, h2, h3, h4, h5, h6,
+.sidebar .sidebar-nav,
+.app-name {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Codice inline e blocchi */
+code, pre, kbd {
+  font-family: 'Consolas', 'Courier New', monospace;
+}
+
+/* Sidebar */
+.sidebar {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.sidebar ul li a {
+  color: #333;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li.active > a {
+  color: #1a1a1a;
+  font-weight: 600;
+  border-right: 3px solid #1a1a1a;
+}
+
+/* Link */
+a {
+  color: #1a1a1a;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  color: #444;
+}
+
+/* Titoli con accent nero */
+h1 { border-bottom: 2px solid #1a1a1a; padding-bottom: .3em; }
+h2 { border-bottom: 1px solid #ddd; padding-bottom: .2em; }
+
+/* Cover button se presente */
+section.cover .cover-main > p:last-child a {
+  background: #1a1a1a;
+  border-color: #1a1a1a;
+}
