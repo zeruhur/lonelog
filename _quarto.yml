@@ -1,9 +1,13 @@
+project:
+  type: default
+  output-dir: output/en/
+
 filters:
   - _extensions/pagebreak.lua  # Converts --- to pagebreaks in Typst
 
 # Cover page images
-logo-image: logo.png
-license-image: by-sa.png
+logo-image: assets/logo.png
+license-image: assets/by-sa.png
 
 format:
   typst:
