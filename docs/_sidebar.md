@@ -1,4 +1,3 @@
-* [Home](/)
-* [English](/en/)
+* [English](/)
 * [Italiano](/it/)
 * [Français](/fr/)
