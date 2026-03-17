@@ -68,11 +68,11 @@ La documentation est disponible dans plusieurs formats et langues :
 
 Notation étendue pour des besoins de jeu spécifiques :
 
-- [Combat Add-on](../en/lonelog-combat-addon.md) - Notation pour rencontres tactiques (EN)
-- [Dungeon Crawling Add-on](../en/lonelog-dungeon-crawling-addon.md) - Notation pour l'exploration (EN)
-- [Resource Tracking Add-on](../en/lonelog-resource-tracking-addon.md) - Inventaire et ressources (EN)
-- [Add-on Guidelines](../en/lonelog-addon-guidelines.md) - Comment écrire votre propre extension (EN)
-- [Add-on Template](../en/lonelog-addon-template.md) - Modèle de départ (EN)
+- [Extension de Combat](lonelog-combat-addon-fr.md) - Notation pour rencontres tactiques
+- [Extension d'Exploration de Donjon](lonelog-dungeon-crawling-addon-fr.md) - Notation pour l'exploration
+- [Extension de Suivi des Ressources](lonelog-resource-tracking-addon-fr.md) - Inventaire et ressources
+- [Directives pour les Extensions](lonelog-addon-guidelines-fr.md) - Comment écrire votre propre extension
+- [Modèle d'Extension](lonelog-addon-template-fr.md) - Modèle de départ
 
 ## Fonctionnalités
 
@@ -148,6 +148,11 @@ quarto preview docs/en/lonelog.md
 │   └── fr/                                 # Traduction française
 │       ├── lonelog-fr.md
 │       └── _sidebar.md
+│       ├── lonelog-addon-guidelines-fr.md     # Lignes directrices des extensions
+│       ├── lonelog-addon-template-fr.md       # Modèle d'extension
+│       ├── lonelog-combat-addon-fr.md         # Extension de combat
+│       ├── lonelog-dungeon-crawling-addon-fr.md # Extension d'exploration
+│       ├── lonelog-resource-tracking-addon-fr.md # Extension de suivi des ressources
 ├── output/                                 # Documents générés (Quarto)
 │   ├── en/                                 # Rendus anglais
 │   ├── it/                                 # Rendus italiens
