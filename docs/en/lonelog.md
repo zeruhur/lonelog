@@ -1800,8 +1800,8 @@ d: 2d6=3,2 -> Failure (1-3)
 #### 9.1.3 Ironsworn
 
 ```
-d: Action=7+Stat=2=9 vs Challenge=4,8 -> Weak Hit
-d: Action=10+Stat=3=13 vs Challenge=2,7 -> Strong Hit
+d: Action=4+Stat=2=6 vs Challenge=4,8 -> Weak Hit
+d: Action=6+Stat=3=9 vs Challenge=2,7 -> Strong Hit
 ```
 
 #### 9.1.4 Fate/Fudge
