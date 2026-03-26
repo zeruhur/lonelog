@@ -103,7 +103,7 @@ d: Discrétion 4 vs ND 5 -> Échec
 => Je donne un coup de pied dans une bouteille. Le garde se retourne !
 
 ? Me voit-il clairement ?
--> Non, but...
+-> Non, mais...
 => Il est méfiant, commence à marcher vers le bruit
 ```
 
@@ -300,9 +300,9 @@ Pour les questions à l'oracle, `->` déclare ce que le monde révèle :
 
 ```
 -> Oui (d6=6)
--> Non, but... (d6=3)
--> Oui, and... (d6=5)
--> Non, and... (d6=1)
+-> Non, mais... (d6=3)
+-> Oui, et... (d6=5)
+-> Non, et... (d6=1)
 ```
 
 ##### Formats D'oracle Courants
@@ -1251,7 +1251,7 @@ d: Survie d6=4 vs ND 6 -> Échec
 
 S9 *Arrivée dans les Terres du Nord*
 (Voyage terminé)
-=> Épuisé et affamé, but j'y suis arrivé.
+=> Épuisé et affamé, mais j'y suis arrivé.
 ```
 
 #### 5.3.5 Choisir votre Approche
