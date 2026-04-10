@@ -9,8 +9,6 @@ parent: Lonelog v1.4.0
 requires: Core Notation (§3)
 ---
 
-# Card Notation Add-on
-
 ## Overview
 
 Core Lonelog already acknowledges card draws as a valid resolution mechanic. What it doesn't define is a compact, unambiguous shorthand for card identities.
@@ -38,8 +36,6 @@ This add-on defines a compact notation for three types of card draws:
 | Position labels in spreads | Named positions in a multi-card spread | `d: Past=5s, Present=Ks` |
 
 **No new core symbols.** Card draws use `d:` and `->` exactly as defined in core Lonelog. The card identity uses `=` as the drawn result; `->` carries the interpreted outcome.
-
----
 
 ### Design Principles
 
@@ -76,6 +72,8 @@ For spreads, label each position with `=`:
 ```
 d: Past=5s, Present=Ks, Future=ACu
 ```
+
+---
 
 Or split across lines when each card needs its own consequence:
 
@@ -333,11 +331,7 @@ Kd    King of Diamonds
 Jkr   Joker
 ```
 
-::: {.callout-warning}
-**`10` and two-digit ranks:** `10d` (Ten of Diamonds) is two characters before the suit. All other ranks are one character. Parsers should treat `10` as a complete rank token.
-:::
-
----
+**Note:** `10d` (Ten of Diamonds) is two characters before the suit. All other ranks are one character. Parsers should treat `10` as a complete rank token.
 
 ## 2. Tarot Notation
 
@@ -372,9 +366,7 @@ Jkr   Joker
 | 20 | Judgement | `M20` | `M20r` |
 | 21 | The World | `M21` | `M21r` |
 
-::: {.callout-tip}
-The Thoth Tarot and some other decks swap the positions of Strength (VIII) and Justice (XI). The `M{n}` notation follows the Rider-Waite-Smith standard (Strength = 8, Justice = 11). If you use a different numbering, note it in your session header.
-:::
+**Note:** The Thoth Tarot and some other decks swap the positions of Strength (VIII) and Justice (XI). The `M{n}` notation follows the Rider-Waite-Smith standard (Strength = 8, Justice = 11). If you use a different numbering, note it in your session header.
 
 ### Minor Arcana
 
@@ -408,8 +400,6 @@ The Thoth Tarot and some other decks swap the positions of Strength (VIII) and J
 |--------|---------|
 | *(none)* | Upright (default) |
 | `r` | Reversed |
-
----
 
 ## 3. Oracle Decks
 
@@ -457,6 +447,8 @@ Use when each card warrants its own `->` or `=>`:
 d: {Position}={card} -> [outcome]
 => [Narrative consequence]
 ```
+
+---
 
 ### Common spread names
 
@@ -529,6 +521,8 @@ A: List them space-separated: `Hand: Ah Kd 7c Qs 3h`. When one is played, log it
 
 **Q: Tarot decks vary — some have different names or art. Does `M12` always mean The Hanged Man?**  
 A: This spec follows the Rider-Waite-Smith numbering, which is the most common standard. If your deck diverges (e.g. Thoth swaps Strength and Justice), note it once in your session header: `[Deck: Thoth — Strength=M11, Justice=M8]`.
+
+---
 
 **Q: Can I use `?` with a card draw instead of `d:`?**  
 A: Use `?` for the question, then `d:` for the draw that answers it. They are separate events — the question is asked, then the card is drawn as the mechanical resolution.

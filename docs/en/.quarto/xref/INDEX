@@ -11,5 +11,15 @@
     "lonelog.typ": "75c41965",
     "lonelog.odt": "a06bb670",
     "lonelog.epub": "4f83ad39"
+  },
+  "lonelog-dice-notation-addon.md": {
+    "lonelog-dice-notation-addon.typ": "dcbbf9b3",
+    "lonelog-dice-notation-addon.odt": "841f966f",
+    "lonelog-dice-notation-addon.epub": "5edcd987"
+  },
+  "lonelog-cards-addon.md": {
+    "lonelog-cards-addon.typ": "4dd14b15",
+    "lonelog-cards-addon.odt": "ed99a1a6",
+    "lonelog-cards-addon.epub": "c909aeb7"
   }
 }

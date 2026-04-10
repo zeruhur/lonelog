@@ -9,8 +9,6 @@ parent: Lonelog v1.4.0
 requires: Core Notation (§3)
 ---
 
-# Dice Notation Add-on
-
 ## Overview
 
 Core Lonelog gives you `d:` to mark a mechanics roll. What goes inside that field is left to you. That freedom is intentional — different systems use wildly different dice conventions — but it creates friction when logs are shared or when tools try to parse them.
@@ -40,8 +38,6 @@ This add-on does not introduce new Lonelog tags or structural blocks. It standar
 | Group roll | Multiple sub-expressions evaluated together | `d: {4d6, 2d8}k2=11` |
 
 **No new core symbols.** This add-on introduces no additions to `@`, `?`, `d:`, `->`, or `=>`.
-
----
 
 ### Design Principles
 
@@ -111,8 +107,6 @@ In a log:
 d: Strike 2d6+2=9
 ```
 
----
-
 ### Keeping or Dropping Dice
 
 These are the most common modifiers in solo play. Use them for advantage/disadvantage, ability score generation, or any system that rolls and discards dice.
@@ -126,6 +120,8 @@ These are the most common modifiers in solo play. Use them for advantage/disadva
 ```
 
 `k` alone defaults to highest: `2d20k1` is the same as `2d20kh1`.
+
+---
 
 **Drop lowest / highest:**
 
@@ -144,11 +140,7 @@ d: Ability score 4d6dl1=15
 
 The breakdown (`[6, 4d, 5, 3]`) is optional — useful when you want to record which die was dropped, but not required.
 
-::: {.callout-tip}
-`k` (keep) and `d` (drop) are the same operation expressed from opposite directions. `4d6kh3` and `4d6dl1` both give you the top 3 dice from a pool of 4.
-:::
-
----
+**Note:** `k` (keep) and `d` (drop) are the same operation expressed from opposite directions. `4d6kh3` and `4d6dl1` both give you the top 3 dice from a pool of 4.
 
 ### Exploding Dice
 
@@ -159,15 +151,15 @@ d6!      roll d6; re-roll and add if you roll a 6
 2d6!     roll 2d6; each die that rolls 6 explodes
 ```
 
+---
+
 In a log:
 
 ```
 d: Damage 2d6! =13
 ```
 
-::: {.callout-warning}
-**Ambiguity with `=` and exploding:** When an expression ends with `!` or another modifier that accepts a compare point, write a space before `=` to distinguish the result from a compare point operator. `2d6!=13` would be parsed as "explode on any roll not equal to 13"; `2d6! =13` records a result of 13.
-:::
+> **Note:** When an expression ends with `!` or another modifier that accepts a compare point, write a space before `=` to distinguish the result from a compare point operator. `2d6!=13` would be parsed as "explode on any roll not equal to 13"; `2d6! =13` records a result of 13.
 
 You can change the trigger with a compare point:
 
@@ -221,8 +213,6 @@ Use `//` or `#` for inline descriptions:
 d: 4d6dl1 // STR=15, 4d6dl1 // DEX=12, 4d6dl1 // CON=9
 ```
 
----
-
 ### Common Patterns by System Type
 
 **D&D / OSR ability scores:**
@@ -243,6 +233,8 @@ d: Clash 2d6+2=9 -> Weak Hit
 d: Persuade 2d20kh1+4=16
 d: Sneak    2d20kl1+6=15
 ```
+
+---
 
 **Fate / Fudge:**
 
@@ -266,19 +258,9 @@ d: Mythic 2d10=47 -> Yes, but...
 
 ## Part II: Complete Reference
 
-This section documents the full notation grammar for tool implementers and players who use complex dice mechanics.
-
----
-
 ## 1. Dice Types
 
-::: {.callout-warning}
-**Die quantity limits:** A single die type has a minimum quantity of `1` and a maximum quantity of `999`.
-
-Valid: `d8`, `1d10`, `999d6`, `20d4 + 999d10`
-
-Invalid: `0d10`, `1000d6`, `-1d20`
-:::
+**Note:** A single die type has a minimum quantity of `1` and a maximum quantity of `999`. Valid: `d8`, `1d10`, `999d6`. Invalid: `0d10`, `1000d6`, `-1d20`.
 
 ### Standard
 
@@ -301,6 +283,8 @@ Rolls a whole number between 1 and 100. Shorthand for `d100`.
 4d%    equivalent to 4d100
 ```
 
+---
+
 ### Fudge / Fate
 
 **Notation:** `dF` / `dF.2` / `dF.1`
@@ -315,8 +299,6 @@ dF    standard Fudge die; equivalent to dF.2
 dF.1  variant Fudge die
 4dF   roll four standard Fudge dice and sum
 ```
-
----
 
 ## 2. Modifiers
 
@@ -339,11 +321,7 @@ Any roll below the minimum is treated as the minimum value.
 4d6min3: [3^, 4, 3, 3^] = 13
 ```
 
-::: {.callout-tip}
-Statistically, rolling the minimum becomes more likely than any other single value. `d6min3` gives a 50% chance of rolling 3.
-:::
-
----
+**Note:** Statistically, rolling the minimum becomes more likely than any other single value. `d6min3` gives a 50% chance of rolling 3.
 
 ### Max
 
@@ -377,18 +355,14 @@ Use a compare point to change the trigger:
 4d10!<=3  explode on 1, 2, or 3
 ```
 
-::: {.callout-warning}
-**`!=` with exploding dice:** The `!=` (not equal) operator conflicts with the exploding notation. Use `<>` instead:
+> **Note:** The `!=` (not equal) operator conflicts with the exploding notation. Use `<>` instead:
+>
+> ```
+> 2d6!!=4   wrong — this means "compound on 4", not "explode on not-4"
+> 2d6!<>4   correct — explode on any value that is not 4
+> ```
 
-```
-2d6!!=4   wrong — this means "compound on 4", not "explode on not-4"
-2d6!<>4   correct — explode on any value that is not 4
-```
-:::
-
-::: {.callout-tip}
-To prevent infinite loops, modifiers are limited to 1000 iterations per die. `1d10!>0` returns at most 1001 rolls.
-:::
+**Note:** To prevent infinite loops, modifiers are limited to 1000 iterations per die. `1d10!>0` returns at most 1001 rolls.
 
 #### Compounding
 
@@ -428,8 +402,6 @@ d6ro     re-roll once on a 1, even if the re-roll is also 1
 4d10r<=3 re-roll any die showing 1, 2, or 3
 ```
 
----
-
 ### Unique
 
 **Notation:** `u` / `uo` / `u{cp}` / `uo{cp}` | **Order:** 5
@@ -442,11 +414,7 @@ Re-rolls any die whose result duplicates another in the pool.
 4d6u=5   only re-roll duplicates that show 5
 ```
 
-::: {.callout-tip}
-If the number of dice exceeds the number of sides (e.g. `5d3u`), unique results are impossible for all dice. The modifier is limited to 1000 iterations to prevent infinite loops.
-:::
-
----
+**Note:** If the number of dice exceeds the number of sides (e.g. `5d3u`), unique results are impossible for all dice. The modifier is limited to 1000 iterations to prevent infinite loops.
 
 ### Keep
 
@@ -468,8 +436,6 @@ Discarded dice are marked with `d` in tool output:
 6d8k3: [3d, 6, 7, 2d, 5, 4d] = 18
 ```
 
----
-
 ### Drop
 
 **Notation:** `d{n}` / `dh{n}` / `dl{n}` | **Order:** 7
@@ -485,16 +451,12 @@ Drops the highest or lowest N results. The opposite of Keep.
 4d10dh1dl2 drop both the highest and lowest 2
 ```
 
-::: {.callout-warning}
-**Keep and Drop together:** Both modifiers look at the full dice pool, including dice already flagged by the other modifier. Using them together can override each other unexpectedly.
-
-```
-3d10k1dh1: [7d, 1d, 2d] = 0   drops everything
-3d10k1d1:  [6d, 1d, 9]  = 9   keeps only the highest
-```
-:::
-
----
+> **Note:** Both modifiers look at the full dice pool, including dice already flagged by the other modifier. Using them together can override each other unexpectedly.
+>
+> ```
+> 3d10k1dh1: [7d, 1d, 2d] = 0   drops everything
+> 3d10k1d1:  [6d, 1d, 9]  = 9   keeps only the highest
+> ```
 
 ### Target Success / Dice Pool
 
@@ -510,16 +472,14 @@ Counts how many dice meet a condition rather than summing values. Append a compa
 
 Successful dice are marked with `*`.
 
-::: {.callout-warning}
-**Interaction with other modifiers:** A target compare point immediately following a modifier that uses compare points is interpreted as the modifier's compare point, not a success target. Specify the target first:
-
-```
-2d6!>3    explode on any roll greater than 3
-2d6>3!    explode on 6; greater than 3 is a success
-```
-:::
-
 ---
+
+> **Note:** A target compare point immediately following a modifier that uses compare points is interpreted as the modifier's compare point, not a success target. Specify the target first:
+>
+> ```
+> 2d6!>3    explode on any roll greater than 3
+> 2d6>3!    explode on 6; greater than 3 is a success
+> ```
 
 ### Target Failure / Dice Pool
 
@@ -532,8 +492,6 @@ Must follow a Target Success modifier directly. Each failure subtracts 1 from th
 ```
 
 Failed dice are marked with `_`.
-
----
 
 ### Critical Success
 
@@ -548,8 +506,6 @@ Marks a die as a critical success. Aesthetic only — does not change the numeri
 
 Critical success dice are marked with `**`.
 
----
-
 ### Critical Failure
 
 **Notation:** `cf` / `cf{cp}` | **Order:** 10
@@ -563,8 +519,6 @@ Marks a die as a critical failure. Aesthetic only.
 
 Critical failure dice are marked with `__`.
 
----
-
 ### Sorting
 
 **Notation:** `s` / `sa` / `sd` | **Order:** 11
@@ -577,8 +531,6 @@ Sorts the dice results before display. Ascending by default.
 4d6sa: [1, 3, 4, 5]   ascending (explicit)
 4d6sd: [5, 4, 3, 1]   descending
 ```
-
----
 
 ### Compare Points
 
@@ -602,15 +554,11 @@ d10!>=5  explode on 5, 6, 7, 8, 9, or 10
 d4r<3    re-roll anything less than 3
 ```
 
-::: {.callout-warning}
-**`!=` versus `<>`:** Both mean "not equal to" and are interchangeable in most contexts. However, `!=` conflicts with the exploding notation — `2d6!!=4` is parsed as "compound on 4", not "explode on not-4". Use `<>` when combining not-equal with exploding:
-
-```
-2d6!<>4   correct: explode on any value that is not 4
-```
-:::
-
----
+> **Note:** Both mean "not equal to" and are interchangeable in most contexts. However, `!=` conflicts with the exploding notation — `2d6!!=4` is parsed as "compound on 4", not "explode on not-4". Use `<>` when combining not-equal with exploding:
+>
+> ```
+> 2d6!<>4   correct: explode on any value that is not 4
+> ```
 
 ## 3. Group Rolls
 
@@ -689,13 +637,13 @@ Use `[ ... ]` or `/* ... */` for multi-word or multi-line labels:
 write on multiple lines */
 ```
 
+---
+
 Any dice notation inside a description block is not parsed:
 
 ```
 4d6 /* Ice damage 5d10+7 */   only 4d6 is rolled
 ```
-
----
 
 ## 5. Math
 
