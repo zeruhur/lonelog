@@ -899,6 +899,15 @@ d: 4d6dl1 // STR=15, 4d6dl1 // DEX=12, 4d6dl1 // CON=9
 d: Stats 4d6dl1 // STR=15
 ```
 
+#strong[Usage Dice (The Black Hack, Macchiato Monsters):]
+
+```
+d: Supply d8=2 -> Step down!
+d: Torchlight d4=1 -> Depleted!
+```
+
+#strong[Note:] A usage die is written as a standard die expression. The step-down mechanic (`d8→d6`) and resource tracking are covered in the Resource Tracking Add-on.
+
 #strong[PbtA / Ironsworn 2d6:]
 
 ```
