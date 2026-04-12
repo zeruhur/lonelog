@@ -4,6 +4,7 @@
   * [Template](/lonelog-addon-template)
   * [Combat](/lonelog-combat-addon)
   * [Dungeon Crawling](/lonelog-dungeon-crawling-addon)
+  * [Resource Tracking](/lonelog-resource-tracking-addon)
   * [Dice Notation](/lonelog-dice-notation-addon)
   * [Card Notation](/lonelog-cards-addon)
   * [Solo Wargaming](/lonelog-wargaming-addon)
