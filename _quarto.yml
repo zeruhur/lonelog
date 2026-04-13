@@ -28,3 +28,7 @@ format:
 
   epub:
     toc: true
+
+  gfm:
+    toc: false
+    wrap: none
