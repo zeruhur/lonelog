@@ -674,7 +674,7 @@
 #show: doc => worldbuilders(
   title: "Lonelog",
   subtitle: "A Standard Notation for Solo RPG Session Logging",
-  version: "1.4.0",
+  version: "1.4.1",
   authors: ("Roberto Bisceglie", ),
   date: none,
   abstract: none,
@@ -846,7 +846,21 @@ In paper notebooks:
 - Use the same symbols and structure
 - Brackets and tags help scanning paper pages
 
-== 2.3 Format Examples
+== 2.3 Indentation
+<indentation>
+Indentation is optional in both digital and analog formats. It carries no structural meaning --- the notation's symbols and markers do that work. But indenting related lines within a sequence can make structure scannable at a glance, and is encouraged when it helps.
+
+```
+@ Search the archives
+    d: Investigation d6=5 vs TN 4 -> Success
+    => I find the shipping manifests. [L:Archive|searched]
+    [N:Viktor|implicated]
+    [Thread:The Shipment|active]
+```
+
+On paper, use whatever indentation feels natural. It's a readability aid, not a rule.
+
+== 2.4 Format Examples
 <format-examples>
 === Digital markdown
 <digital-markdown>
@@ -2877,6 +2891,7 @@ This notation is inspired by the #link("https://alfredvalley.itch.io/the-valley-
 
 #strong[Version History:]
 
+- v 1.4.1: Added §2.3 Indentation --- clarified that indentation is optional, carries no structural meaning, and is encouraged as a readability aid.
 - v 1.4.0: Added §3.1.1 Multiple Actors --- `@(Name)` convention for multi-PC and companion play, promoted from the Combat Add-on.
 - v 1.3.0: Added tag category syntax (§4.1.7), multi-line tag form (§4.1.8), and roll context blocks inside `d:` (§3.2.1).
 - v 1.2.0: Added Section 10: Add-ons.
