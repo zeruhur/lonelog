@@ -5,7 +5,7 @@ author: Roberto Bisceglie
 version: 1.1.0
 license: CC BY-SA 4.0
 lang: en
-parent: Lonelog v1.3.0
+parent: Lonelog v1.5.0
 requires: Core Notation (§3), Persistent Elements (§4.1), Progress Tracking (§4.2)
 ---
 
@@ -401,11 +401,11 @@ Some systems modify oracle likelihood based on resource state. Note it:
 
 ```
 ? Can I find more arrows in the ruins? (Likelihood: Unlikely — remote area)
--> Yes, but... (d6=4)
+d: d6=4 -> Yes, but...
 => I find a quiver with only 3 usable arrows. [Inv:Arrow+3]
 
 ? Is there food in this abandoned camp? (Likelihood: Very Unlikely — old camp)
--> No, and... (d6=1)
+d: d6=1 -> No, and...
 => The food is rotted and the smell attracts something. [Clock:Predator 1/4]
 ```
 
@@ -415,12 +415,12 @@ When the Combat Add-on is in use, resource consumption integrates naturally:
 
 ```
 [COMBAT]
-R1
+Rd1
 @ Fire bow at Orc 1
 d: Ranged d6=5 vs TN 4 -> Success
 => Arrow hits! [F:Orc 1|HP-3] [Inv:Arrow-1]
 
-R2
+Rd2
 @ Throw last flask of oil
 d: Ranged d6=3 vs TN 4 -> Fail
 => Missed! The oil splatters uselessly. [Inv:Oil Flask|depleted]
@@ -531,13 +531,13 @@ S5 *Entering the crypt*
 [Inv:Torch-1] [Timer:Torchlight 6]
 
 ? Are there enemies?
--> Yes, and... (d6=6)
+d: d6=6 -> Yes, and...
 => Skeletons rise from the bone piles!
 
 [COMBAT]
 [F:Skeleton×3|HP 3 each|Close]
 
-R1
+Rd1
 @ Fire at the nearest skeleton
 d: Ranged d6=5 vs TN 4 -> Success
 => Arrow shatters its skull! [F:Skeleton×3→2] [Inv:Arrow-1]
@@ -546,7 +546,7 @@ d: Ranged d6=5 vs TN 4 -> Success
 d: Attack d6=3 vs TN 4 -> Fail
 => Clumsy swing, I dodge.
 
-R2
+Rd2
 @ Draw sword, press the attack
 d: Melee d6=6 vs TN 4 -> Success
 => Cut clean through! [F:Skeleton×2→1]

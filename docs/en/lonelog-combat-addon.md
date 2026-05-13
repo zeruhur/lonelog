@@ -5,7 +5,7 @@ author: Roberto Bisceglie
 version: 1.1.0
 license: CC BY-SA 4.0
 lang: en
-parent: Lonelog v1.4.0
+parent: Lonelog v1.5.0
 requires: Core Notation (§3)
 ---
 

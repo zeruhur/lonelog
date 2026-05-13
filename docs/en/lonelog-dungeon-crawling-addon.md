@@ -5,7 +5,7 @@ author: Roberto Bisceglie
 version: 1.1.0
 license: CC BY-SA 4.0
 lang: en
-parent: Lonelog v1.3.0
+parent: Lonelog v1.5.0
 requires: Core Notation (§3)
 ---
 
@@ -96,7 +96,7 @@ S5 *North corridor*
 
 @ Open the door carefully
 ? Is it locked?
--> No (d6=5)
+d: d6=5 -> No
 => The door swings open easily.
 
 [R:4|active|storage room, dusty shelves|exits S:R2, E:R5]
@@ -107,7 +107,7 @@ d: Investigation d6=5 vs TN 4 -> Success
 (note: might open R5?)
 
 ? Are there enemies?
--> No, and... (d6=6)
+d: d6=6 -> No, and...
 => The room is completely undisturbed. Years of dust.
 
 [R:4|cleared, looted]
@@ -351,7 +351,7 @@ d: d20+4=18 vs AC 12 -> Hit, 1d8=7
 @(Guard 1) Grabs weapon and charges
 d: d20+3=11 vs AC 14 -> Miss
 
-R2
+Rd2
 @ Sweep at both remaining guards
 d: d20+4=15 vs AC 12 -> Hit, 1d8=5 => [F:Guard 1|dead]
 d: d20+4=12 vs AC 12 -> Hit, 1d8=3 => [F:Guard 2|dead]
@@ -388,7 +388,7 @@ S4 *R3 – Crypt, turn 3*
 @ Search the sarcophagi
 d: 1-in-6 secret door check: d6=2 -> None found
 ? Wandering monster check
--> No (d6=5)
+d: d6=5 -> No
 
 @ Light the wall sconces and examine the inscriptions
 d: INT check d20=8 vs DC 12 -> Fail
@@ -567,7 +567,9 @@ S7 *North passage*
 d: Stealth d6=4 vs TN 4 -> Success
 
 [R:2|active|barracks|exits S:R1, W:R4]
-? Enemies? -> Yes (d6=2) => Two guards, armed.
+? Enemies?
+d: d6=2 -> Yes
+=> Two guards, armed.
 ...combat...
 [R:2|cleared, looted]
 [R:4|unexplored|marked on guard's map]

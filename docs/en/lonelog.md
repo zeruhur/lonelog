@@ -2,7 +2,7 @@
 title: Lonelog
 subtitle: "A Standard Notation for Solo RPG Session Logging"
 author: Roberto Bisceglie
-version: 1.4.1
+version: 1.5.0
 license: CC BY-SA 4.0
 lang: en
 ---
@@ -329,7 +329,19 @@ d: Hacking d10=3 -> Partial Success
 
 #### Oracle Answers
 
-For oracle questions, `->` declares what the world reveals:
+For oracle questions resolved by dice, use `d:` to record the roll — consistent with mechanics resolution:
+
+```
+? Do they see Phoebe?
+d: d100=60 vs 35 (Unlikely) -> No
+=> Distracted, but one guard lingers. [N:Guard|watchful]
+
+? Is anyone home?
+d: d6=5 vs 4+ -> Yes
+=> Lights are on inside.
+```
+
+When the dice details don't matter, `->` alone is a valid shorthand:
 
 ```
 -> Yes (d6=6)
@@ -338,16 +350,37 @@ For oracle questions, `->` declares what the world reveals:
 -> No, and... (d6=1)
 ```
 
-#### Common oracle formats
+#### Choosing between `d:`, `tbl:`, and `gen:` for oracle resolution
+
+When an oracle question involves dice, choose based on the type of resolution:
+
+- **`d:`** — direct dice roll against a probability or target (Yes/No checks, likelihood rolls)
+- **`tbl:`** — lookup on a named oracle table (Mythic Random Event table, custom oracle table)
+- **`gen:`** — complex multi-step oracle generator producing compound results
+
+```
+? Does the guard notice me? (Unlikely)
+d: d100=60 vs 35 -> No                           (direct probability roll)
+
+? What random event disrupts the scene?
+tbl: Mythic Event d100=78 -> NPC Action           (named table oracle)
+
+? What does the oracle reveal about my enemy?
+gen: Mythic Event d100=78+d100=34 -> NPC Action / Betray  (compound generator)
+```
+
+#### Common oracle shorthand formats
+
+When recording the roll is unnecessary, `->` alone captures the result:
 
 - **Yes/No oracles:** `-> Yes`, `-> No`
 - **Yes/No with modifiers:** `-> Yes, but...`, `-> No, and...`
 - **Degree results:** `-> Strong yes`, `-> Weak no`
 - **Custom results:** `-> Partially`, `-> With a cost`
 
-#### Why unified syntax?
+#### #### Why unified syntax?
 
-Both mechanics and oracles resolve uncertainty. Using `->` for both creates consistency—every resolution gets the same declaration, making your log easier to scan and parse. Whether you rolled dice or asked the oracle, `->` marks the moment uncertainty becomes certainty.
+Both mechanics rolls and oracle dice resolve the same thing: uncertainty. Using `d:` for any dice-based resolution — whether resolving an action or answering an oracle question — keeps your log consistent and scannable. `->` alone is the shorthand when dice details aren't worth recording; `tbl:` and `gen:` handle table-based and generator-based oracle resolution respectively.
 
 ### 3.3 Consequences
 
@@ -2197,6 +2230,7 @@ This notation is inspired by the [Valley Standard](https://alfredvalley.itch.io/
 
 **Version History:**
 
+- v 1.5.0: Updated §3.2.2 — `d:` is now the preferred notation for oracle dice rolls, consistent with mechanics resolution. `->` alone demoted to shorthand. Clarified when to use `d:`, `tbl:`, and `gen:` for oracle resolution.
 - v 1.4.1: Added §2.3 Indentation — clarified that indentation is optional, carries no structural meaning, and is encouraged as a readability aid.
 - v 1.4.0: Added §3.1.1 Multiple Actors — `@(Name)` convention for multi-PC and companion play, promoted from the Combat Add-on.
 - v 1.3.0: Added tag category syntax (§4.1.7), multi-line tag form (§4.1.8), and roll context blocks inside `d:` (§3.2.1).
