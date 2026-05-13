@@ -2,7 +2,8 @@
   "lonelog-combat-addon.md": {
     "lonelog-combat-addon.typ": "54f1766f",
     "lonelog-combat-addon.odt": "a9502d04",
-    "lonelog-combat-addon.epub": "c263fc03"
+    "lonelog-combat-addon.epub": "c263fc03",
+    "lonelog-combat-addon-gfm.md": "24964654"
   },
   "lonelog-addon-guidelines.md": {
     "lonelog-addon-guidelines.typ": "96080980"
@@ -32,5 +33,17 @@
     "partylog.typ": "ce3d5f16",
     "partylog.odt": "af25f97f",
     "partylog.epub": "ea93ea08"
+  },
+  "lonelog-dungeon-crawling-addon.md": {
+    "lonelog-dungeon-crawling-addon.typ": "cd6a67ba",
+    "lonelog-dungeon-crawling-addon.odt": "3c67d003",
+    "lonelog-dungeon-crawling-addon.epub": "0684d0e2",
+    "lonelog-dungeon-crawling-addon-gfm.md": "5f111ced"
+  },
+  "lonelog-resource-tracking-addon.md": {
+    "lonelog-resource-tracking-addon.typ": "d3346079",
+    "lonelog-resource-tracking-addon.odt": "ce69beb8",
+    "lonelog-resource-tracking-addon.epub": "3fd4d6cf",
+    "lonelog-resource-tracking-addon-gfm.md": "47067865"
   }
 }
