@@ -1,0 +1,42 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v.*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Package English outputs
+        run: |
+          zip -j lonelog-en-${{ github.ref_name }}.zip \
+            output/en/*.pdf output/en/*.epub output/en/*.odt
+
+      - name: Package French outputs
+        run: |
+          zip -j lonelog-fr-${{ github.ref_name }}.zip \
+            output/fr/*.pdf output/fr/*.epub output/fr/*.odt
+
+      - name: Package Italian outputs
+        run: |
+          zip -j lonelog-it-${{ github.ref_name }}.zip \
+            output/it/*.pdf output/it/*.epub output/it/*.odt
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "Lonelog ${{ github.ref_name }}"
+          generate_release_notes: true
+          files: |
+            lonelog-en-${{ github.ref_name }}.zip
+            lonelog-fr-${{ github.ref_name }}.zip
+            lonelog-it-${{ github.ref_name }}.zip
