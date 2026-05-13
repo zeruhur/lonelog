@@ -19,7 +19,7 @@ jobs:
       - name: Package English outputs
         run: |
           zip -j lonelog-en-${{ github.ref_name }}.zip \
-            output/en/*.pdf output/en/*.epub output/en/*.odt output/en/*.md
+            output/en/lonelog*.pdf output/en/lonelog*.epub output/en/lonelog*.odt output/en/lonelog*.md
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
