@@ -183,8 +183,12 @@ Real session logs using Lonelog are valuable for demonstrating the notation. Con
 
 ## Version History
 
-- **v1.3.0** (Current) - Add-on ecosystem and expanded notation
-- **v1.1.0** - Licensing and inline definitions
+- **v1.5.0** (Current) - `d:` is now the preferred notation for oracle dice rolls; clarified when to use `d:`, `tbl:`, and `gen:` for oracle resolution
+- **v1.4.1** - Indentation clarified as optional and a readability aid, not structural
+- **v1.4.0** - `@(Name)` convention for multi-PC and companion play, promoted from the Combat Add-on
+- **v1.3.0** - Tag category syntax, multi-line tag form, and roll context blocks inside `d:`
+- **v1.2.0** - Add-on ecosystem introduced
+- **v1.1.0** - License clarification; inline table definitions, filtered option sets, multi-line result blocks
 - **v1.0.0** - Renamed from "Solo TTRPG Notation" to "Lonelog"
 
 ## License
