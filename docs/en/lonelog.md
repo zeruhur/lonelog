@@ -2,7 +2,7 @@
 title: Lonelog
 subtitle: "A Standard Notation for Solo RPG Session Logging"
 author: Roberto Bisceglie
-version: 1.5.0
+version: 1.6.0
 license: CC BY-SA 4.0
 lang: en
 ---
@@ -246,6 +246,8 @@ When you play more than one character—a party of PCs, a PC with a companion, o
 | Primary PC | `@ Action` | `@ Pick the lock` |
 | Named PC | `@(Name) Action` | `@(Elara) Covers the door` |
 | Companion / ally NPC | `@(Name) Action` | `@(Jonah) Distracts the guard` |
+| Lead/Assist | `@(A > B) Action` | `@(Elara > Jonah) Boosts the climb` |
+| Joint action | `@(A+B) Action` | `@(Elara+Jonah) Force the door` |
 
 ```
 @ Slip into the archive
@@ -255,6 +257,22 @@ d: Stealth d6=5 vs TN 4 -> Success
 ```
 
 This convention requires no new symbols—it simply extends `@` with a parenthetical to identify who is acting.
+
+**Lead/Assist** — use `@(A > B)` when one character helps another and the game has a formal assistance mechanic (PbtA's *Help* move, Ironsworn's *Aid your Ally*, etc.). `A` is the helper; `B` makes the roll. The `>` means "assists," not a comparison operator.
+
+```
+@(Elara > Jonah) Elara steadies the rope while Jonah climbs
+d: Athletics d6+1 vs TN 4 -> Success
+=> Jonah reaches the ledge. Elara follows.
+```
+
+**Joint action** — use `@(A+B)` when two characters contribute to a single roll together, with no clear lead/assist distinction.
+
+```
+@(Elara+Jonah) Force open the barred door
+d: Might 2d6 (take highest) vs TN 5 -> Success
+=> The bar splinters. They're through.
+```
 
 **When to use it:** Any time ambiguity about who is acting would require prose clarification anyway: co-op solo play, games with a party, or scenes where a companion's action has its own mechanical resolution.
 
@@ -2081,6 +2099,8 @@ Bookmark this section. You'll come back to it often in your first few sessions, 
 |--------|---------|---------|
 | `@` | Player action — primary/default PC | `@ Pick the lock` |
 | `@(Name)` | Action attributed to a named actor (other PC, companion, NPC) | `@(Jonah) Covers the door` |
+| `@(A > B)` | Lead/Assist — A helps B, B makes the roll | `@(Elara > Jonah) Boosts the climb` |
+| `@(A+B)` | Joint action — both contribute to one roll | `@(Elara+Jonah) Force the door` |
 | `?` | Oracle question (world/uncertainty) | `? Is anyone inside?` |
 | `d:` | Mechanics roll/result | `d: 2d6=8 vs TN 7 -> Success` |
 | `->` | Oracle/dice result | `-> Yes, but...` |
@@ -2230,6 +2250,7 @@ This notation is inspired by the [Valley Standard](https://alfredvalley.itch.io/
 
 **Version History:**
 
+- v 1.6.0: Added Lead/Assist `@(A > B)` and Joint Action `@(A+B)` syntax to §3.1.1, upstreamed from Partylog. Updated Appendix A.1.
 - v 1.5.0: Updated §3.2.2 — `d:` is now the preferred notation for oracle dice rolls, consistent with mechanics resolution. `->` alone demoted to shorthand. Clarified when to use `d:`, `tbl:`, and `gen:` for oracle resolution.
 - v 1.4.1: Added §2.3 Indentation — clarified that indentation is optional, carries no structural meaning, and is encouraged as a readability aid.
 - v 1.4.0: Added §3.1.1 Multiple Actors — `@(Name)` convention for multi-PC and companion play, promoted from the Combat Add-on.
