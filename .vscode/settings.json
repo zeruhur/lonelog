@@ -2,5 +2,6 @@
     "[markdown]": {
         "editor.cursorSurroundingLines": 0
     },
-    "commentTranslate.targetLanguage": "it"
+    "commentTranslate.targetLanguage": "it",
+    "liveServer.settings.port": 5501
 }
