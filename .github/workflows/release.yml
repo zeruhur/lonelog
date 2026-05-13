@@ -19,17 +19,17 @@ jobs:
       - name: Package English outputs
         run: |
           zip -j lonelog-en-${{ github.ref_name }}.zip \
-            output/en/*.pdf output/en/*.epub output/en/*.odt
+            output/en/*.pdf output/en/*.epub output/en/*.odt output/en/*.md
 
       - name: Package French outputs
         run: |
           zip -j lonelog-fr-${{ github.ref_name }}.zip \
-            output/fr/*.pdf output/fr/*.epub output/fr/*.odt
+            output/fr/*.pdf output/fr/*.epub output/fr/*.odt output/fr/*.md
 
       - name: Package Italian outputs
         run: |
           zip -j lonelog-it-${{ github.ref_name }}.zip \
-            output/it/*.pdf output/it/*.epub output/it/*.odt
+            output/it/*.pdf output/it/*.epub output/it/*.odt output/it/*.md
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
