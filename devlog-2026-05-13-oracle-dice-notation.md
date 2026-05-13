@@ -5,29 +5,7 @@ type: devlog
 tags: [lonelog, add-ons, notation, oracle, update]
 ---
 
-# Two Updates: Block Tag Consistency and Oracle Dice Notation
-
-## Add-on Block Tags Now Consistent Across the Ecosystem
-
-Small but satisfying fix.
-
-The three official add-ons — Combat, Dungeon Crawling, and Resource Tracking — each introduced a structural block to delimit a mode of play: a combat encounter, a dungeon session status, a resource snapshot. The Combat Add-on got this right from the start: `[COMBAT]` / `[/COMBAT]`, bracket tags, consistent with everything else in Lonelog. The other two didn't. Dungeon Crawling used `=== Dungeon Status ===` with no closing tag. Resource Tracking used `--- RESOURCES ---` / `--- /RESOURCES ---` with dash separators.
-
-That inconsistency bugged me. If you're using all three add-ons together — which is the point — switching mental models for block delimiters mid-session is friction you shouldn't have to deal with.
-
-**What changed:**
-
-- `=== Dungeon Status ===` → `[DUNGEON STATUS]` / `[/DUNGEON STATUS]`
-- `--- RESOURCES ---` / `--- /RESOURCES ---` → `[RESOURCES]` / `[/RESOURCES]`
-- Analog notebook alternatives now consistently use `--- BLOCK ---` / `--- END BLOCK ---` across all three add-ons
-
-Both updated add-ons are now at **v1.1.0**.
-
-The Community Add-on Guidelines have also been updated (v1.1.0) with an explicit §3.3 on structural block syntax, so future add-ons get this right from the start. The rule is simple: bracket tags for digital, dashed separators for analog, explicit closing tag always required.
-
-No changes to any notation logic, tag semantics, or examples beyond the block delimiters themselves. If you have session logs using the old format, they're still perfectly readable — this only affects how you write new blocks going forward.
-
----
+# Two Updates: Oracle Dice Notation and Block Tag Consistency 
 
 ## Clarifying Oracle Dice Notation in v1.5.0
 
@@ -84,3 +62,23 @@ gen: Mythic Event d100=78+d100=34 -> NPC Action / Betray  (compound generator)
 All three official add-ons are updated to reference Lonelog v1.5.0 as their parent. Oracle examples in the Dungeon Crawling and Resource Tracking add-ons have been updated to use the preferred `d:` form. Two stray `R1`/`R2` round markers were also corrected to `Rd1`/`Rd2`.
 
 **Your existing logs are fine.** The `-> result (d#=N)` format still appears in the spec as valid shorthand. This is a clarification, not a breaking change.
+
+## Add-on Block Tags Now Consistent Across the Ecosystem
+
+Small but satisfying fix.
+
+The three official add-ons — Combat, Dungeon Crawling, and Resource Tracking — each introduced a structural block to delimit a mode of play: a combat encounter, a dungeon session status, a resource snapshot. The Combat Add-on got this right from the start: `[COMBAT]` / `[/COMBAT]`, bracket tags, consistent with everything else in Lonelog. The other two didn't. Dungeon Crawling used `=== Dungeon Status ===` with no closing tag. Resource Tracking used `--- RESOURCES ---` / `--- /RESOURCES ---` with dash separators.
+
+That inconsistency bugged me. If you're using all three add-ons together — which is the point — switching mental models for block delimiters mid-session is friction you shouldn't have to deal with.
+
+**What changed:**
+
+- `=== Dungeon Status ===` → `[DUNGEON STATUS]` / `[/DUNGEON STATUS]`
+- `--- RESOURCES ---` / `--- /RESOURCES ---` → `[RESOURCES]` / `[/RESOURCES]`
+- Analog notebook alternatives now consistently use `--- BLOCK ---` / `--- END BLOCK ---` across all three add-ons
+
+Both updated add-ons are now at **v1.1.0**.
+
+The Community Add-on Guidelines have also been updated (v1.1.0) with an explicit §3.3 on structural block syntax, so future add-ons get this right from the start. The rule is simple: bracket tags for digital, dashed separators for analog, explicit closing tag always required.
+
+No changes to any notation logic, tag semantics, or examples beyond the block delimiters themselves. If you have session logs using the old format, they're still perfectly readable — this only affects how you write new blocks going forward.

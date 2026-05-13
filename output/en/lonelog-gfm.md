@@ -438,7 +438,7 @@ When recording the roll is unnecessary, `->` alone captures the result:
 - **Degree results:** `-> Strong yes`, `-> Weak no`
 - **Custom results:** `-> Partially`, `-> With a cost`
 
-#### \#### Why unified syntax?
+#### Why unified syntax?
 
 Both mechanics rolls and oracle dice resolve the same thing:
 uncertainty. Using `d:` for any dice-based resolution — whether

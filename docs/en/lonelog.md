@@ -378,7 +378,7 @@ When recording the roll is unnecessary, `->` alone captures the result:
 - **Degree results:** `-> Strong yes`, `-> Weak no`
 - **Custom results:** `-> Partially`, `-> With a cost`
 
-#### #### Why unified syntax?
+#### Why unified syntax?
 
 Both mechanics rolls and oracle dice resolve the same thing: uncertainty. Using `d:` for any dice-based resolution — whether resolving an action or answering an oracle question — keeps your log consistent and scannable. `->` alone is the shorthand when dice details aren't worth recording; `tbl:` and `gen:` handle table-based and generator-based oracle resolution respectively.
 
